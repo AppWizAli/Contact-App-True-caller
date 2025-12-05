@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ActivityDeleteContact">
+
+    <!-- Top Header with Back, Title and Search -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp"
+        android:background="#FFFFFF">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/arrowback"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/arrow_back"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Back"
+            android:tint="#000000" />
+
+        <!-- Delete Contacts Title -->
+        <TextView
+            android:id="@+id/deleteContacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Contacts"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_toEndOf="@+id/arrowback"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Search Bar -->
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/searchBar"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/white"
+            android:hint="Search"
+            app:iconTint="#000000"
+            style="@style/Widget.Material3.SearchBar"
+            app:strokeColor="#E0E0E0"
+            app:strokeWidth="1dp" />
+
+    </RelativeLayout>
+
+    <!-- All | Recents Tabs -->
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/headerLayout"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="#F5F5F5">
+
+        <!-- All Tab (Selected) -->
+        <TextView
+            android:id="@+id/tab_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"
+            android:paddingEnd="24dp"
+            android:textColor="#007AFF"
+            android:drawablePadding="4dp"
+            android:drawableBottom="@drawable/underline_selected" />
+
+        <!-- Recents Tab (Unselected) -->
+        <TextView
+            android:id="@+id/tab_recents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingBottom="8dp"
+            android:text="Recents"
+            android:textColor="#8E8E93"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Contacts List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tabLayout"
+        android:layout_above="@+id/btnDelete"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp" />
+
+    <!-- Delete Button (Fixed at Bottom) -->
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete (0)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:enabled="false"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:stateListAnimator="@null"
+        android:elevation="0dp" />
+
+</RelativeLayout>

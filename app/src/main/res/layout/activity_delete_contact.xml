@@ -1,129 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".ActivityDeleteContact">
+    android:orientation="vertical"
+    android:background="#FFFFFF">
 
-    <!-- Top Header with Back, Title and Search -->
+    <!-- Status Bar Time -->
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9:41"
+        android:textSize="14sp"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:textColor="#000000" />
+
+    <!-- Header with Back Button -->
     <RelativeLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="12dp"
-        android:paddingBottom="16dp"
-        android:background="#FFFFFF">
+        android:layout_height="70dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="20dp">
 
-        <!-- Back Arrow -->
+        <!-- Back Button -->
         <ImageView
-            android:id="@+id/arrowback"
+            android:id="@+id/btnBack"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/arrow_back"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:contentDescription="Back"
-            android:tint="#000000" />
+            android:backgroundTint="#000000" />
 
-        <!-- Delete Contacts Title -->
-        <TextView
-            android:id="@+id/deleteContacts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete Contacts"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_toEndOf="@+id/arrowback"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp" />
-
-        <!-- Search Bar -->
-        <com.google.android.material.search.SearchBar
-            android:id="@+id/searchBar"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+        <!-- Filter Button (Edit) -->
+        <ImageView
+            android:id="@+id/btnFilter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_filter"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="4dp"
-            android:backgroundTint="@color/white"
-            android:hint="Search"
-            app:iconTint="#000000"
-            style="@style/Widget.Material3.SearchBar"
-            app:strokeColor="#E0E0E0"
-            app:strokeWidth="1dp" />
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="Filter"
+            android:backgroundTint="#000000" />
+
+        <!-- 3 Dots (More Options) -->
+        <ImageView
+            android:id="@+id/btnMore"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_more_vert"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="More Options"
+            android:backgroundTint="#000000" />
+
 
     </RelativeLayout>
 
-    <!-- All | Recents Tabs -->
+    <!-- Contact Profile Section -->
     <LinearLayout
-        android:id="@+id/tabLayout"
+        android:id="@+id/profileSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/headerLayout"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:background="#F5F5F5">
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingBottom="24dp">
 
-        <!-- All Tab (Selected) -->
+        <!-- Profile Icon/Letter -->
         <TextView
-            android:id="@+id/tab_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="All"
-            android:textSize="16sp"
+            android:id="@+id/tvProfileLetter"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:text="B"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:paddingBottom="8dp"
-            android:paddingEnd="24dp"
-            android:textColor="#007AFF"
-            android:drawablePadding="4dp"
-            android:drawableBottom="@drawable/underline_selected" />
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_circle_blue"
+            android:layout_marginBottom="12dp" />
 
-        <!-- Recents Tab (Unselected) -->
+        <!-- Contact Name -->
         <TextView
-            android:id="@+id/tab_recents"
+            android:id="@+id/tvContactName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="24dp"
-            android:paddingBottom="8dp"
-            android:text="Recents"
-            android:textColor="#8E8E93"
-            android:textSize="16sp" />
+            android:text="Ali Bhai"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
 
     </LinearLayout>
 
-    <!-- Contacts List -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <!-- Messages Timeline -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewMessages"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tabLayout"
-        android:layout_above="@+id/btnDelete"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingTop="8dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="16dp">
 
-    <!-- Delete Button (Fixed at Bottom) -->
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete (0)"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@color/white"
-        android:enabled="false"
-        android:padding="16dp"
-        android:layout_margin="16dp"
-        android:layout_alignParentBottom="true"
-        android:stateListAnimator="@null"
-        android:elevation="0dp" />
+        <LinearLayout
+            android:id="@+id/messagesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp">
 
-</RelativeLayout>
+            <!-- Date 1: Today -->
+            <TextView
+                android:id="@+id/tvDateToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today, 09 September, Sunday"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Today's Messages RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewToday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Date 2: Yesterday -->
+            <TextView
+                android:id="@+id/tvDateYesterday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yesterday, 08 September, Saturday"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Yesterday's Messages RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewYesterday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Date 3: 19 September -->
+            <TextView
+                android:id="@+id/tvDateSeptember19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19 September, Monday"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- 19 September Messages RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSeptember19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="32dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</LinearLayout>
