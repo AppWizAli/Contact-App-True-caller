@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="whitee">#F5F5F5</color>
+    <!-- AppTheme ko update karo -->
+    <style name="Theme.TrueCallerApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Status bar color -->
+
+        <!-- Navigation bar color (optional) -->
+        <item name="android:navigationBarColor">#C1BEBE</item>
+    </style>
+
 </resources>

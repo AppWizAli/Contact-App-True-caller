@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_bg"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="10dp">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/headerPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="6dp">
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- 3 Dots -->
+        <ImageView
+            android:id="@+id/iconMore"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_more_vert"
+            android:backgroundTint="#6E6E6E" />
+
+        <!-- Filter Icon -->
+        <ImageView
+            android:id="@+id/iconFilter"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toStartOf="@id/iconMore"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_filter"
+            android:backgroundTint="#6E6E6E" />
+
+    </RelativeLayout>
+
+
+    <!-- FAVORITES LABEL -->
+    <TextView
+        android:id="@+id/txtFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorites"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/headerPhone"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+    <!-- FAVORITES LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/txtFavorites"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:paddingHorizontal="4dp"
+        android:orientation="horizontal" />
+
+
+    <!-- OLDER LABEL -->
+    <TextView
+        android:id="@+id/txtOlder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Older"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/rvFavorites"
+        android:layout_marginTop="24dp" />
+
+
+    <!-- RECENTS LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtOlder"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false" />
+
+
+    <!-- Floating Dial Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        app:backgroundTint="#068BF4"
+        app:tint="@android:color/white"
+        app:srcCompat="@drawable/ic_dialpad" />
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Blue underline for selected tab -->
+    <solid android:color="#007AFF" />
+
+    <!-- Size: width=24dp, height=3dp -->
+    <size
+        android:width="24dp"
+        android:height="3dp" />
+
+    <!-- Rounded corners (optional) -->
+    <corners android:radius="1.5dp" />
+
+</shape>

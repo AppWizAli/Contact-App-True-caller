@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="4dp"
+    android:paddingVertical="4dp"
+    android:minWidth="200dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jazz"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Telenor"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Always use this for calls"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+</LinearLayout>

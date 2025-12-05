@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="4dp"
+    android:minWidth="180dp">
+
+    <TextView
+        android:id="@+id/btnPaste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Paste"
+        android:textSize="15sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnClearCallHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear call history"
+        android:textSize="15sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnSpeedDial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speed Dial"
+        android:textSize="15sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnSystemCallSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="System Call Settings"
+        android:textSize="15sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground" />
+
+</LinearLayout>

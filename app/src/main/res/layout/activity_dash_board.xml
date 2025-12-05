@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_bg">
+
+    <com.google.android.material.search.SearchBar
+        android:id="@+id/searchCard"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:backgroundTint="@color/white"
+        android:elevation="6dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="#777"
+        android:hint="Search..." />
+
+    <!-- 📱 RecyclerView in Middle -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchCard"
+        android:layout_above="@id/bottomNav"
+        android:padding="8dp" />
+
+    <!-- ⬇️ Stylish Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="4dp"
+        app:menu="@menu/bottom_nev"
+        app:itemIconTint="@color/black"
+        app:backgroundTint="@color/white"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled" />
+
+    <!-- ☎ Floating Dial Button -->
+
+
+</RelativeLayout>

@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrueCallerContactApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityContactDetail"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityDeleteContact"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityDashBoard"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

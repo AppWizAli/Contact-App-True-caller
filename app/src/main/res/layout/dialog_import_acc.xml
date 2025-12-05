@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/importDialogLayout"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:elevation="8dp"
+    android:paddingVertical="8dp"
+    android:minWidth="300dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtImportTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import to account"
+        android:textSize="16sp"
+        android:textColor="#666"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"/>
+
+    <!-- Google Option 1 -->
+    <LinearLayout
+        android:id="@+id/optionGoogle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical">
+
+        <!-- Google Icon -->
+        <ImageView
+            android:id="@+id/imgGoogleIcon1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/google_icon"
+            android:padding="8dp"/>
+
+        <!-- Text Section -->
+        <LinearLayout
+            android:id="@+id/layoutGoogleText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/txtGoogle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/txtEmail1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="alihassan@gmail.com"
+                android:textSize="14sp"
+                android:textColor="#666"
+                android:layout_marginTop="2dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Google Option 2 -->
+    <LinearLayout
+        android:id="@+id/optionGoogle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical">
+
+        <!-- Google Icon -->
+        <ImageView
+            android:id="@+id/imgGoogleIcon2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/google_icon"
+            android:padding="8dp"/>
+
+        <!-- Text Section -->
+        <LinearLayout
+            android:id="@+id/layoutGoogleText2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/txtGoogle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/txtEmail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="alihassan@gmail.com"
+                android:textSize="14sp"
+                android:textColor="#666"
+                android:layout_marginTop="2dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Phone Contact Option -->
+    <LinearLayout
+        android:id="@+id/optionPhoneContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical">
+
+        <!-- Phone Icon -->
+        <ImageView
+            android:id="@+id/imgPhoneIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_phone_contact"
+            android:padding="8dp"/>
+
+        <!-- Text -->
+        <TextView
+            android:id="@+id/txtPhoneContact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Phone contact"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_marginStart="16dp"/>
+
+    </LinearLayout>
+
+    <!-- Cancel Button -->
+    <TextView
+        android:id="@+id/btnCancelImport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textSize="16sp"
+        android:textColor="#D10000"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="?android:attr/selectableItemBackground"/>
+
+</LinearLayout>

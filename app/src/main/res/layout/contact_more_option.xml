@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="4dp"
+    android:minWidth="180dp">
+
+    <TextView
+        android:id="@+id/btnImportExport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import/Export"
+        android:textSize="15sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnOptimizeContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Optimize Contacts"
+        android:textSize="15sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnContactsToDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacts to Display"
+        android:textSize="15sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnDeleteContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Contacts"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:padding="14dp"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:id="@+id/btnAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Accounts"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:padding="14dp"
+        android:background="?android:attr/selectableItemBackground" />
+
+</LinearLayout>
