@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@drawable/screen_bg">
 
     <!-- Status Bar Time -->
 
@@ -26,7 +26,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:contentDescription="Back"
-            android:tint="#000000" />
+            android:backgroundTint="#000000" />
 
         <!-- Edit Button -->
         <ImageView
@@ -38,7 +38,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="80dp"
             android:contentDescription="Edit"
-            android:tint="#000000" />
+            android:backgroundTint="#000000" />
 
         <!-- 3 Dots (More Options) -->
         <ImageView
@@ -50,7 +50,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="48dp"
             android:contentDescription="More Options"
-            android:tint="#000000" />
+            android:backgroundTint="#000000" />
 
         <!-- Star/Favorite Button -->
         <ImageView
@@ -62,7 +62,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
             android:contentDescription="Favorite"
-            android:tint="#000000" />
+            android:backgroundTint="#000000" />
 
     </RelativeLayout>
 
@@ -145,7 +145,7 @@
                 android:layout_height="26dp"
                 android:layout_marginBottom="8dp"
                 android:src="@drawable/ic_whatsapp"
-                android:tint="#25D366" />
+                android:backgroundTint="#25D366" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -170,7 +170,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_message"
-                android:tint="#2196F3"
+                android:backgroundTint="#2196F3"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -196,7 +196,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_call"
-                android:tint="#2196F3"
+                android:backgroundTint="#2196F3"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -222,7 +222,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_vediocall"
-                android:tint="#2196F3"
+                android:backgroundTint="#2196F3"
                 android:layout_marginBottom="8dp" />
 
             <TextView

@@ -9,13 +9,13 @@
 
     <!-- ➕ Add Tab -->
     <item
-        android:id="@+id/nav_add"
+        android:id="@+id/nav_Contact"
         android:icon="@android:drawable/ic_input_add"
         android:title="Contacts" />
 
     <!-- 👤 Profile Tab -->
     <item
-        android:id="@+id/nav_profile"
+        android:id="@+id/nav_Group"
         android:icon="@android:drawable/ic_menu_myplaces"
         android:title="Groups" />
 

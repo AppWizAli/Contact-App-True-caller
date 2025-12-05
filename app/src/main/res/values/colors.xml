@@ -3,12 +3,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="whitee">#F5F5F5</color>
-    <!-- AppTheme ko update karo -->
-    <style name="Theme.TrueCallerApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Status bar color -->
 
-        <!-- Navigation bar color (optional) -->
-        <item name="android:navigationBarColor">#C1BEBE</item>
-    </style>
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="accent_color">#FF4081</color>
+    <color name="background_light">#f8fafc</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Status bar colors -->
+    <color name="status_bar_dark">#1E1B24</color>  <!-- Dark blue status bar -->
+    <color name="status_bar_light">#F5F5F5</color> <!-- Light status bar -->
 
 </resources>

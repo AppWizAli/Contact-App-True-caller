@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemCallContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="14dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_call_item"
+    android:elevation="5dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- LEFT AREA -->
+    <LinearLayout
+        android:id="@+id/leftSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/rightSection"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+
+        <!-- Title + Duration -->
+        <TextView
+            android:id="@+id/tvTitleDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Outgoing · 2:12"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#111111" />
+
+        <!-- Call Row -->
+        <LinearLayout
+            android:id="@+id/rowCallType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:id="@+id/imgCallType"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_call_incoming"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0346 7455800"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/tvNumberType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" • Mobile"
+                android:textSize="14sp"
+                android:textColor="#7A7A7A"
+                android:layout_marginStart="6dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- RIGHT AREA -->
+    <LinearLayout
+        android:id="@+id/rightSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5:53 PM"
+            android:textSize="14sp"
+            android:textColor="#111111" />
+
+        <TextView
+            android:id="@+id/tvAgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Just now"
+            android:textSize="12sp"
+            android:textColor="#7A7A7A"
+            android:layout_marginTop="3dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

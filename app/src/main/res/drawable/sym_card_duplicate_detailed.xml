@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-  
-</selector>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- SIM Card Shape -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M4,4L20,4L20,20L4,20L4,4Z" />
+
+    <!-- Rounded corner -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M4,4L7,4C7,2 8,1 10,1L14,1C16,1 17,2 17,4L20,4L20,20L4,20L4,4Z" />
+
+    <!-- SIM Chip -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M8,8L10,8L10,10L8,10L8,8Z" />
+
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M14,8L16,8L16,10L14,10L14,8Z" />
+
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M8,14L10,14L10,16L8,16L8,14Z" />
+
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M14,14L16,14L16,16L14,16L14,14Z" />
+
+    <!-- Duplicate Arrow -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,11L13,11L13,9L15,9L15,11L17,11L17,13L15,13L15,15L13,15L13,13L11,13L11,11Z" />
+
+</vector>

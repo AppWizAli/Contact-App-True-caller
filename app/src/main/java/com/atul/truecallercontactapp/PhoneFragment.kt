@@ -31,7 +31,7 @@ class PhoneFragment : Fragment() {
     private fun showFilterPopup(anchorView: View) {
         // Inflate popup layout
         val popupView = LayoutInflater.from(requireContext())
-            .inflate(R.layout.dialog_simple_filter, null)
+            .inflate(R.layout.dialog_phone_simple_filter, null)
 
         // Create PopupWindow
         val popupWindow = PopupWindow(
@@ -64,7 +64,7 @@ class PhoneFragment : Fragment() {
     private fun showMoreOptionsPopup(anchorView: View) {
         // Inflate popup layout
         val popupView = LayoutInflater.from(requireContext())
-            .inflate(R.layout.dialog_more_option, null)
+            .inflate(R.layout.dialog__phone_more_option, null)
 
         // Create PopupWindow
         val popupWindow = PopupWindow(

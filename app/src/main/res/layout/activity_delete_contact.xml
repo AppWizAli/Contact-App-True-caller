@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@drawable/screen_bg">
 
     <!-- Status Bar Time -->
     <TextView
@@ -47,16 +47,16 @@
             android:src="@drawable/ic_filter"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="60dp"
             android:contentDescription="Filter"
             android:backgroundTint="#000000" />
 
         <!-- 3 Dots (More Options) -->
         <ImageView
-            android:id="@+id/btnMore"
+            android:id="@+id/btndelete"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_more_vert"
+            android:src="@drawable/delete"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"

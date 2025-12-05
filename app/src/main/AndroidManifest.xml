@@ -12,6 +12,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrueCallerContactApp">
         <activity
+            android:name=".ActivityContactSet"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityDialPad"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityAppearance"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitySetting"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityProfile"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityUngroupedContacts"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRemoveFromGroup"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityAddToGroup"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityCoworkers"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityCallDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityCreateNewContact"
+            android:exported="false" />
+        <activity
             android:name=".ActivityContactDetail"
             android:exported="false" />
         <activity

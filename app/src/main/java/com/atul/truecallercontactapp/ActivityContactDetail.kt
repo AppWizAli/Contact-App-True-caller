@@ -1,20 +1,43 @@
 package com.atul.truecallercontactapp
 
+import android.app.Dialog
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.atul.truecallercontactapp.databinding.ActivityContactDetailBinding
+import com.atul.truecallercontactapp.databinding.DialogRecentMoreBinding
 
 class ActivityContactDetail : AppCompatActivity() {
+    private lateinit var binding: ActivityContactDetailBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_contact_detail)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityContactDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // More button click
+        binding.btnMore.setOnClickListener {
+            showMoreOptionsDialog()
         }
+    }
+
+    private fun showMoreOptionsDialog() {
+        // Correct binding inflate
+        val dialogBinding = DialogRecentMoreBinding.inflate(layoutInflater)
+        val dialog = Dialog(this)
+        dialog.setContentView(dialogBinding.root)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        // Close dialog when any item is clicked
+        dialogBinding.tvViewCallHistory.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvBlock.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvShare.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvRemoveFavourite.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvMergeSplit.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvChangeAccount.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvRemoveAccount.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvDelete.setOnClickListener { dialog.dismiss() }
+        dialogBinding.tvSetRingtone.setOnClickListener { dialog.dismiss() }
+
+        dialog.show()
     }
 }

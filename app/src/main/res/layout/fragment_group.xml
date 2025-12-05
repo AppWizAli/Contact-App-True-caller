@@ -1,14 +1,519 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupFragment">
+    android:background="@drawable/screen_bg">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="Add"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#2196F3"
+        app:elevation="8dp"
+        app:rippleColor="#FFFFFF"
+        app:tint="#FFFFFF"/>
+
+    <!-- Scroll View for Content -->
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/screen_bg">
 
-</FrameLayout>
+        <RelativeLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <!-- Groups Section with More Icon -->
+            <TextView
+                android:id="@+id/groupsHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Groups"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="20dp"/>
+
+            <ImageView
+                android:id="@+id/moreIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_more_vert"
+                android:layout_alignTop="@id/groupsHeader"
+                android:layout_alignParentEnd="true"
+                android:tint="#000000"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Coworkers Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coworkersCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/groupsHeader"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/coworkersText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Coworkers"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/coworkersCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(6)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Family Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/familyCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/coworkersCard"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/familyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Family"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/familyCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(12)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Favorites Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/favoritesCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/familyCard"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/favoritesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Favorites"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/favoritesCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(2)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Friends Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/friendsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/favoritesCard"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/friendsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Friends"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/friendsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(0)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Ungrouped contacts Header -->
+            <TextView
+                android:id="@+id/ungroupedHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ungrouped contacts"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_below="@id/friendsCard"
+                android:layout_marginTop="20dp"/>
+
+            <!-- Phone Card with arrow up -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/phoneCardArrowUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/ungroupedHeader"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/phoneText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        android:id="@+id/phoneCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(7)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignTop="@id/phoneText"
+                        android:layout_toStartOf="@+id/phoneArrowUp"/>
+
+                    <ImageView
+                        android:id="@+id/phoneArrowUp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/arrow_up"
+                        android:tint="#666666"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                    <TextView
+                        android:id="@+id/localUnsyncedText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="local, unsynced"
+                        android:textSize="14sp"
+                        android:textColor="#FF9800"
+                        android:layout_below="@id/phoneText"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/ungroupedContactsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ungrouped contacts (7)"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_below="@id/localUnsyncedText"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="12dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Phone Card with arrow down -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/phoneCardArrowDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/phoneCardArrowUp"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/phoneText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/phoneCount2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(12)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/arrowDown"/>
+
+                    <ImageView
+                        android:id="@+id/arrowDown"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/arrow_down"
+                        android:tint="#666666"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Google Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/googleCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/phoneCardArrowDown"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/googleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Google"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignParentStart="true"/>
+
+                    <TextView
+                        android:id="@+id/emailText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mohsin@gmail.com"
+                        android:textSize="16sp"
+                        android:textColor="#2196F3"
+                        android:autoLink="all"
+                        android:layout_toEndOf="@id/googleText"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:id="@+id/number325"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(325)"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_below="@id/googleText"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"/>
+
+                    <ImageView
+                        android:id="@+id/googleArrowUp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/arrow_up"
+                        android:tint="#666666"
+                        android:layout_alignTop="@id/googleText"
+                        android:layout_alignParentEnd="true"/>
+
+                    <TextView
+                        android:id="@+id/coworkersText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Coworkers (6)"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_below="@id/number325"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="16dp"/>
+
+                    <TextView
+                        android:id="@+id/familyText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Family (12)"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_below="@id/coworkersText2"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/favoritesText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Favorites (2)"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_below="@id/familyText2"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="10dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- WhatsApp Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/whatsappCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/googleCard"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/whatsappText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Whatsapp"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/whatsappCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(12)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- SIM Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/simCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_below="@id/whatsappCard"
+                android:layout_marginBottom="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="#FFFFFF">
+
+                    <TextView
+                        android:id="@+id/simText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SIM"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/simCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(12)"
+                        android:textSize="16sp"
+                        android:textColor="#666666"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,10 +1,458 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityContactSet">
+    android:background="@drawable/screen_bg">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- HEADER -->
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#F5F5F5"
+            android:elevation="4dp">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:tint="#000000" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Contacts Settings"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Apply Button -->
+            <TextView
+                android:id="@+id/applyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentEnd="true"
+                android:text="SAVE"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/apply_button_bg"/>
+
+        </RelativeLayout>
+
+        <!-- CONTACTS TO DISPLAY -->
+        <RelativeLayout
+            android:id="@+id/displaySection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/displayLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contacts to display"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/displayValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/displayLabel"
+                android:layout_marginTop="8dp"
+                android:text="Showable specific accounts or groups from your contacts list"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <!-- VIEW CONTACT NAMES AS -->
+        <RelativeLayout
+            android:id="@+id/viewNamesSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/displaySection"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:id="@+id/viewNamesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View contact names as"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewNamesLabel"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Give name first"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- SORT CONTACTS BY -->
+        <RelativeLayout
+            android:id="@+id/sortSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewNamesSection"
+            android:background="#F8F8F8"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/sortLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort Contacts by"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sortValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sortLabel"
+                android:layout_marginTop="8dp"
+                android:text="view name"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <!-- FORMAT PHONE NUMBERS -->
+        <RelativeLayout
+            android:id="@+id/formatSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sortSection"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/formatLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Format phone numbers"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/formatLabel"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enable phone numbers formatting"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- LONG CONTACT NAMES -->
+        <RelativeLayout
+            android:id="@+id/longNamesSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formatSection"
+            android:background="#F8F8F8"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/longNamesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Long contact names"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/longNamesLabel"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alone 2 times display names"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="false" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- ADDITIONAL CONTACT INFO -->
+        <RelativeLayout
+            android:id="@+id/additionalInfoSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/longNamesSection"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/additionalInfoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional contact info"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/additionalInfoValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/additionalInfoLabel"
+                android:layout_marginTop="8dp"
+                android:text="Choose additional contact info to display in contacts list, such as resume, etc."
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <!-- NEW CONTACT DIALOG -->
+        <RelativeLayout
+            android:id="@+id/newContactSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/additionalInfoSection"
+            android:background="#F8F8F8"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/newContactLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New contact dialog"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/newContactValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/newContactLabel"
+                android:layout_marginTop="8dp"
+                android:text="Select input Photos to show when creating new contact and editing contact name"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <!-- CONTACT CARD -->
+        <RelativeLayout
+            android:id="@+id/contactCardSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newContactSection"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/contactCardLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact card"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contactCardValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contactCardLabel"
+                android:layout_marginTop="8dp"
+                android:text="Additional contact card strings"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <!-- SHOW ALPHABET -->
+        <RelativeLayout
+            android:id="@+id/alphabetSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactCardSection"
+            android:background="#F8F8F8"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/alphabetLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show alphabet"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alphabetLabel"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enable alphabetical index"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- SHOW ALPHABETICALLY SEPARATORS -->
+        <RelativeLayout
+            android:id="@+id/separatorsSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/alphabetSection"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/separatorsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show alphabetically separators"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separatorsLabel"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Smooth contacts by alphabet"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- AUTO SHOW KEYBOARD -->
+        <RelativeLayout
+            android:id="@+id/keyboardSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separatorsSection"
+            android:background="#F8F8F8"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/keyboardLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto show keyboard"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/keyboardLabel"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Automatically open keyboard when switching to contacts"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

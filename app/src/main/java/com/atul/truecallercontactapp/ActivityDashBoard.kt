@@ -11,9 +11,11 @@ import com.atul.truecallercontactapp.databinding.ActivityDashBoardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ActivityDashBoard : AppCompatActivity() {
-   private lateinit var binding: ActivityDashBoardBinding
+    private lateinit var binding: ActivityDashBoardBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.decorView.systemUiVisibility = 0
         binding = ActivityDashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -25,20 +27,19 @@ class ActivityDashBoard : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
 
-//                R.id.nav_home -> {
-//                    loadFragment(HomeFragment())
-//                    true
-//                }
+                R.id.nav_Contact -> {
+                    loadFragment(ContactFragment())
+                    true
+                }
 
                 R.id.nav_Phone -> {
                     loadFragment(PhoneFragment())
                     true
                 }
-
-//                R.id.nav_settings -> {
-//                    loadFragment(SettingsFragment())
-//                    true
-//                }
+                R.id.nav_Group -> {
+                    loadFragment(GroupFragment())
+                    true
+                }
 
                 else -> false
             }
