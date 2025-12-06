@@ -1,25 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.TrueCallerContactApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
-            <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
-        </style>
 
-        <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
-            <item name="android:background">@color/white</item>
-        </style>
-        <style name="DialButton">
-            <item name="android:layout_width">80dp</item>
-            <item name="android:layout_height">80dp</item>
-            <item name="android:background">@drawable/dial_button_bg</item>
-            <item name="android:textColor">@color/black</item>
-            <item name="android:textSize">24sp</item>
-            <item name="android:layout_margin">10dp</item>
-            <item name="android:gravity">center</item>
-        </style>
+    <!-- Base application theme -->
+    <style name="Base.Theme.TrueCallerContactApp" parent="Theme.Material3.DayNight.NoActionBar" />
 
-
+    <!-- BottomSheet Dialog Theme -->
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
     </style>
 
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- Dialpad Button Style -->
+    <style name="DialButton">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@drawable/dial_button_bg</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- App theme -->
     <style name="Theme.TrueCallerContactApp" parent="Base.Theme.TrueCallerContactApp" />
+
 </resources>
