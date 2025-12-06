@@ -5,41 +5,75 @@
     android:layout_height="match_parent"
     android:background="@drawable/screen_bg">
 
-    <com.google.android.material.search.SearchBar
-        android:id="@+id/searchCard"
+    <RelativeLayout
+        android:id="@+id/searchlayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_margin="10dp"
-        app:backgroundTint="@color/white"
-        android:elevation="6dp"
+        android:background="@drawable/search_bar"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColorHint="#777"
-        android:hint="Search..." />
+        android:elevation="6dp">
 
-    <!-- 📱 RecyclerView in Middle -->
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_search"
+            android:tint="@color/black" />
+
+
+        <TextView
+            android:id="@+id/searchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/searchIcon"
+            android:layout_marginStart="10dp"
+            android:text="Search..."
+            android:textColor="#777"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_profile"
+            android:scaleType="centerCrop"
+            android:background="@drawable/profile_bg"
+            android:padding="2dp" />
+
+    </RelativeLayout>
+
+
+
+
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchCard"
+       android:layout_below="@+id/searchlayout"
         android:layout_above="@id/bottomNav"
         android:padding="8dp" />
 
-    <!-- ⬇️ Stylish Bottom Navigation -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:elevation="4dp"
         app:menu="@menu/bottom_nev"
         app:itemIconTint="@color/black"
-        app:backgroundTint="@color/white"
         app:itemTextColor="@color/black"
-        app:labelVisibilityMode="labeled" />
-
-    <!-- ☎ Floating Dial Button -->
+        app:backgroundTint="@color/white"
+        android:elevation="12dp"
+        app:labelVisibilityMode="labeled"
+        android:background="@drawable/bottom_nav_bg"/>
 
 
 </RelativeLayout>

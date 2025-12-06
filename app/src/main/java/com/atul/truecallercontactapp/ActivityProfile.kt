@@ -1,5 +1,6 @@
 package com.atul.truecallercontactapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,10 @@ class ActivityProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
        binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnSettings.setOnClickListener {
+            intent= Intent(this@ActivityProfile, ActivitySetting::class.java)
+            startActivity(intent)
+        }
 
     }
 }

@@ -32,7 +32,7 @@
             android:id="@+id/mainContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="10dp">
 
             <!-- Groups Section with More Icon -->
             <TextView
@@ -52,7 +52,7 @@
                 android:src="@drawable/ic_more_vert"
                 android:layout_alignTop="@id/groupsHeader"
                 android:layout_alignParentEnd="true"
-                android:tint="#000000"
+                android:backgroundTint="#000000"
                 android:layout_marginEnd="8dp"/>
 
             <!-- Coworkers Card -->
@@ -258,16 +258,18 @@
                         android:layout_height="wrap_content"
                         android:text="(7)"
                         android:textSize="16sp"
+                        android:layout_marginEnd="15dp"
                         android:textColor="#666666"
                         android:layout_alignTop="@id/phoneText"
                         android:layout_toStartOf="@+id/phoneArrowUp"/>
 
                     <ImageView
                         android:id="@+id/phoneArrowUp"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
                         android:src="@drawable/arrow_up"
-                        android:tint="#666666"
+                        android:backgroundTint="#666666"
+                        android:layout_marginEnd="4dp"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"/>
 
@@ -329,15 +331,17 @@
                         android:text="(12)"
                         android:textSize="16sp"
                         android:textColor="#666666"
+                        android:layout_marginEnd="15dp"
                         android:layout_centerVertical="true"
                         android:layout_toStartOf="@+id/arrowDown"/>
 
                     <ImageView
                         android:id="@+id/arrowDown"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
                         android:src="@drawable/arrow_down"
-                        android:tint="#666666"
+                        android:backgroundTint="#666666"
+                        android:layout_marginEnd="4dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"/>
                 </RelativeLayout>
@@ -393,10 +397,10 @@
 
                     <ImageView
                         android:id="@+id/googleArrowUp"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
                         android:src="@drawable/arrow_up"
-                        android:tint="#666666"
+                        android:backgroundTint="#666666"
                         android:layout_alignTop="@id/googleText"
                         android:layout_alignParentEnd="true"/>
 

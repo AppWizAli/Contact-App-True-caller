@@ -1,5 +1,6 @@
 package com.atul.truecallercontactapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,10 @@ class ActivityDashBoard : AppCompatActivity() {
         window.decorView.systemUiVisibility = 0
         binding = ActivityDashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.profilePic.setOnClickListener {
+            intent= Intent(this@ActivityDashBoard, ActivityProfile::class.java)
+            startActivity(intent)
+        }
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
 
