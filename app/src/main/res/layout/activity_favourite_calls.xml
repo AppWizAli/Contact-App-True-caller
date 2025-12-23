@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_gray"
+    android:paddingTop="10dp">
+
+    <!-- SEARCH BAR -->
+    <RelativeLayout
+        android:id="@+id/searchlayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/search_bar"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_search"
+            android:tint="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/searchText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/searchIcon"
+            android:layout_toStartOf="@id/profilePic"
+            android:layout_marginStart="8dp"
+            android:hint="Search..."
+            android:textColorHint="#454A4E"
+            android:textSize="15sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePic"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_profile"
+            android:background="@drawable/profile_bg"
+            android:padding="2dp"
+            android:elevation="2dp"/>
+
+        <!-- Add text next to profile pic -->
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/txtFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchlayout"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        android:text="Favorites"
+        android:textSize="16sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/black"/>
+       <TextView
+           android:id="@+id/add"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Add"
+           android:layout_marginTop="16dp"
+           android:textColor="@color/primary_dark"
+           android:layout_alignEnd="@+id/txtFavorites"
+           android:layout_below="@id/searchlayout"
+           android:layout_alignParentEnd="true"
+           android:layout_marginEnd="20dp"
+           />
+
+    <!-- FAVORITES RECYCLER VIEW -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/txtFavorites"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="10dp"
+        android:paddingHorizontal="4dp" />
+
+    <!-- FREQUENTLY CONNECTED HEADER -->
+    <TextView
+        android:id="@+id/txtOlder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvFavorites"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="10dp"
+        android:text="Frequently Connected"
+        android:textSize="16sp"
+        android:fontFamily="@font/regular"
+        android:textColor="#000000" />
+
+    <!-- RECENTS RECYCLER VIEW -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtOlder"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="10dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"/>
+
+</RelativeLayout>

@@ -3,6 +3,8 @@ package com.atul.truecallercontactapp
 import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.atul.truecallercontactapp.databinding.ActivityContactDetailBinding
 import com.atul.truecallercontactapp.databinding.DialogRecentMoreBinding
 
@@ -13,6 +15,10 @@ class ActivityContactDetail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityContactDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.statusBarColor = ContextCompat.getColor(this@ActivityContactDetail, R.color.white_gray)
+
+        // Light status bar (dark icons)
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
 
         // More button click
         binding.btnMore.setOnClickListener {

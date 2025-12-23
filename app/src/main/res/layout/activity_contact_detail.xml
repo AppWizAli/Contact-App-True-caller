@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/screen_bg">
+    android:background="@color/white_gray">
 
-    <!-- Status Bar Time -->
-
-
-    <!-- Header with Back Button -->
+    <!-- ================= HEADER ================= -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:paddingHorizontal="16dp"
         android:paddingBottom="20dp">
 
-        <!-- Back Button -->
         <ImageView
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrow_back"
+            android:src="@drawable/backspace_arrow"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:contentDescription="Back"
-            android:backgroundTint="#000000" />
+            android:tint="#000000"/>
 
-        <!-- Edit Button -->
+        <ImageView
+            android:id="@+id/btnFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/unfilled_star"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="50dp"
+            android:tint="#000000"/>
+
         <ImageView
             android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_edit"
+            android:src="@drawable/edit_icon"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="80dp"
-            android:contentDescription="Edit"
-            android:backgroundTint="#000000" />
+            android:layout_marginEnd="20dp"
+            android:tint="#000000"/>
 
-        <!-- 3 Dots (More Options) -->
         <ImageView
             android:id="@+id/btnMore"
             android:layout_width="wrap_content"
@@ -48,33 +48,17 @@
             android:src="@drawable/ic_more_vert"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="48dp"
-            android:contentDescription="More Options"
-            android:backgroundTint="#000000" />
-
-        <!-- Star/Favorite Button -->
-        <ImageView
-            android:id="@+id/btnStar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="Favorite"
-            android:backgroundTint="#000000" />
-
+            android:tint="#000000"/>
     </RelativeLayout>
 
-    <!-- Contact Profile Section -->
+    <!-- ================= PROFILE ================= -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:paddingBottom="24dp">
 
-        <!-- Profile Icon/Letter -->
         <TextView
             android:id="@+id/tvProfileLetter"
             android:layout_width="80dp"
@@ -85,9 +69,8 @@
             android:gravity="center"
             android:textColor="#FFFFFF"
             android:background="@drawable/bg_circle_blue"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"/>
 
-        <!-- Contact Name -->
         <TextView
             android:id="@+id/tvContactName"
             android:layout_width="wrap_content"
@@ -95,238 +78,238 @@
             android:text="Bhai jan"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="8dp" />
+            android:textColor="#000000"/>
 
-        <!-- Phone Number -->
         <TextView
             android:id="@+id/tvPhoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q324 56650000"
+            android:text="0324 56650000"
             android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Online Status -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Online"
-            android:textSize="14sp"
-            android:textColor="#4CAF50"
-            android:drawableStart="@drawable/green_circle_bg"
-            android:drawablePadding="6dp"
-            android:gravity="center_vertical" />
-
+            android:textColor="#666666"/>
     </LinearLayout>
 
-    <!-- Action Buttons -->
+    <!-- ================= ACTION BUTTONS ================= -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
         android:padding="16dp"
-        android:paddingBottom="24dp">
+        android:gravity="center">
 
-        <!-- WhatsApp Button -->
         <LinearLayout
-            android:id="@+id/whatsappLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="12dp">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="26dp"
-                android:layout_marginBottom="8dp"
-                android:src="@drawable/ic_whatsapp"
-                android:backgroundTint="#25D366" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="WhatsApp"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
-        </LinearLayout>
-
-        <!-- Message Button -->
-        <LinearLayout
-            android:id="@+id/messageLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
+            android:background="@drawable/icon_bg"
             android:gravity="center"
             android:padding="12dp">
 
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/ic_message"
-                android:backgroundTint="#2196F3"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Message"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
+                android:src="@drawable/phone_call"/>
         </LinearLayout>
 
-        <!-- Call Button -->
         <LinearLayout
-            android:id="@+id/callLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/icon_bg"
             android:gravity="center"
             android:padding="12dp">
 
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/ic_call"
-                android:backgroundTint="#2196F3"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Call"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
+                android:src="@drawable/messageimg"/>
         </LinearLayout>
 
-        <!-- Video Call Button -->
         <LinearLayout
-            android:id="@+id/videoLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/icon_bg"
             android:gravity="center"
             android:padding="12dp">
 
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/ic_vediocall"
-                android:backgroundTint="#2196F3"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Video"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
+                android:src="@drawable/vediocall_img"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/icon_bg"
+            android:gravity="center"
+            android:padding="12dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/sndmessageimg"/>
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- Scrollable Details Section -->
+    <!-- ================= SCROLLABLE CONTENT ================= -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Signed actions and apps -->
-            <TextView
+            <!-- PHONE / WHATSAPP CARD -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Signed actions and apps"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp" />
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/card_bg"
+                android:elevation="2dp"
+                android:padding="12dp">
 
-            <!-- About Section -->
-            <TextView
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0324 56650000"
+                        android:textStyle="bold"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/messageimg_black"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Custom"
+                    android:textSize="12sp"
+                    android:textColor="#6B6B6B"/>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:elevation="2dp"
+                android:padding="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/whatsappimg"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WhatsApp"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several actions available"
+                    android:textSize="12sp"
+                    android:textColor="#6B6B6B"
+                    android:paddingStart="28dp"/>
+            </LinearLayout>
+
+
+            <!-- ABOUT -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="About"
                 android:textSize="14sp"
+                android:layout_marginTop="10dp"
                 android:textColor="#000000"
-                android:textStyle="bold"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp" />
+                android:paddingStart="20dp"/>
 
-            <!-- Groups -->
-            <TextView
+            <!-- ABOUT CARD -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Groups"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:paddingTop="8dp"
-                android:paddingBottom="4dp" />
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_bg"
+                android:elevation="2dp"
+                android:padding="12dp"
+                android:orientation="vertical">
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Groups"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family, Favorites" android:textColor="#6B6B6B"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Family, Favorites"
-                android:textSize="14sp"
-                android:textColor="#666666"
-                android:paddingBottom="8dp" />
+               android:layout_marginHorizontal="16dp"
 
-            <!-- Ringtone -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ringtone"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:paddingTop="8dp"
-                android:paddingBottom="4dp" />
+                android:background="@drawable/card_bg"
+                android:elevation="2dp"
+                android:padding="12dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Default"
-                android:textSize="14sp"
-                android:textColor="#666666"
-                android:paddingBottom="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ringtone"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Default"
+                    android:textColor="#6B6B6B"/>
+            </LinearLayout>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Recent Activity"
+           android:textSize="14sp"
+           android:layout_marginTop="10dp"
+           android:textColor="#000000"
+           android:paddingStart="20dp"
+           />
 
-            <!-- Recent Activity Header -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Recent activity"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:paddingTop="16dp"
-                android:paddingBottom="12dp" />
-
-            <!-- Recent Calls RecyclerView -->
+            <!-- RECENT CALLS -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewCalls"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="32dp" />
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="32dp"/>
 
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

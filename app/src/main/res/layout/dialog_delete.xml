@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Clear call history"
         android:textSize="20sp"
+        android:fontFamily="@font/medium"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:paddingBottom="8dp" />
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:text="This action cannot be undone!"
         android:textSize="14sp"
+        android:fontFamily="@font/regular"
         android:textColor="@color/black"
         android:paddingBottom="4dp" />
 
@@ -37,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="Are you sure you want to continue?"
         android:textSize="14sp"
+        android:fontFamily="@font/regular"
         android:textColor="@color/black"
         android:paddingBottom="16dp" />
 

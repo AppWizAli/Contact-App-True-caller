@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import com.atul.truecallercontactapp.databinding.ActivityDashBoardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,10 +20,10 @@ class ActivityDashBoard : AppCompatActivity() {
         window.decorView.systemUiVisibility = 0
         binding = ActivityDashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.profilePic.setOnClickListener {
-            intent= Intent(this@ActivityDashBoard, ActivityProfile::class.java)
-            startActivity(intent)
-        }
+        window.statusBarColor = ContextCompat.getColor(this@ActivityDashBoard, R.color.white_gray)
+
+        // Light status bar (dark icons)
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
 

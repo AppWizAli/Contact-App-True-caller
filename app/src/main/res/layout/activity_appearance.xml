@@ -2,312 +2,288 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg">
+    android:background="#F4F6F8">
 
     <!-- HEADER -->
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#F5F5F5">
+        android:background="#F4F6F8">
 
-        <!-- Back Button -->
         <ImageView
             android:id="@+id/backButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:src="@drawable/backspace_arrow"
             android:tint="#000000" />
 
-        <!-- Title -->
         <TextView
-            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Appearance"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- Apply Button -->
-        <TextView
-            android:id="@+id/applyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="16dp"
-            android:layout_alignParentEnd="true"
-            android:text="APPLY"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
+            android:textSize="18sp"
+            android:textColor="#000000" />
     </RelativeLayout>
 
-    <!-- THEME -->
-    <RelativeLayout
-        android:id="@+id/themeSection"
+    <!-- CONTENT -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:background="#FFFFFF"
-        android:padding="16dp"
-        android:layout_marginTop="1dp">
+        android:layout_height="match_parent"
+        android:layout_below="@id/header">
 
-        <TextView
-            android:id="@+id/themeLabel"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Theme"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/themeValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/themeLabel"
-            android:layout_marginTop="4dp"
-            android:text="Dark blue"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+            <!-- THEME -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/themeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Theme"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-    <!-- TABS -->
-    <RelativeLayout
-        android:id="@+id/tabsSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/themeSection"
-        android:background="#F5F5F5"
-        android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/themeTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Dark blue"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-        <TextView
-            android:id="@+id/tabsLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tabs"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <!-- TABS -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tabsValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tabsLabel"
-            android:layout_marginTop="4dp"
-            android:text="Edit visible tabs and order"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/tabsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tabs"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tabsTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Edit visible tabs and order"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-    <!-- TEXT SIZE -->
-    <RelativeLayout
-        android:id="@+id/textSizeSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tabsSection"
-        android:background="#FFFFFF"
-        android:padding="16dp">
+            <!-- TEXT SIZE -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textSizeLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Text size"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/textSizeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Text size"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/textSizeValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textSizeLabel"
-            android:layout_marginTop="4dp"
-            android:text="100%"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textSizeTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="100%"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-    </RelativeLayout>
+            <!-- DIALPAD -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-    <!-- DIALPAD -->
-    <RelativeLayout
-        android:id="@+id/dialpadSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textSizeSection"
-        android:background="#F5F5F5"
-        android:padding="16dp">
+                <TextView
+                    android:id="@+id/dialpadTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dialpad"
+                    android:fontFamily="@font/regular"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/dialpadLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dialpad"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dialpadTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Dialpad appearance"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-        <TextView
-            android:id="@+id/dialpadValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/dialpadLabel"
-            android:layout_marginTop="4dp"
-            android:text="Dialpad appearance"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+            <!-- LIST ITEM SIZE -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/listItemTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="List item size"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-    <!-- LIST ITEM SIZE -->
-    <RelativeLayout
-        android:id="@+id/listItemSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dialpadSection"
-        android:background="#FFFFFF"
-        android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/listItemTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Height 100%, photo scale 100%"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-        <TextView
-            android:id="@+id/listItemLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="List item size"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <!-- FAVORITES -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-        <TextView
-            android:id="@+id/listItemValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/listItemLabel"
-            android:layout_marginTop="4dp"
-            android:text="Height 100%, photo scale 100%"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/favTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favorite contacts layout"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/favTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Grid, 3 columns"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-    <!-- FAVORITE CONTACTS -->
-    <RelativeLayout
-        android:id="@+id/favoriteSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/listItemSection"
-        android:background="#F5F5F5"
-        android:padding="16dp">
+            <!-- PHOTOS -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-        <TextView
-            android:id="@+id/favoriteLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Favorite contacts layout"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/photosTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Photos and Avatar"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/favoriteValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/favoriteLabel"
-            android:layout_marginTop="4dp"
-            android:text="Grid, 3 columns"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/photosTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Customize photos style and avatars"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-    </RelativeLayout>
+            <!-- INCOMING -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp">
 
-    <!-- PHOTOS AND AVATAR -->
-    <RelativeLayout
-        android:id="@+id/photosSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/favoriteSection"
-        android:background="#FFFFFF"
-        android:padding="16dp">
+                <TextView
+                    android:id="@+id/incomingTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Incoming call screen"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/photosLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Photos and Avatar"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/incomingTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Photo style, answer method, visuals"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
 
-        <TextView
-            android:id="@+id/photosValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/photosLabel"
-            android:layout_marginTop="4dp"
-            android:text="Customize photos style and avatars"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+            <!-- ONGOING -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/ongoingTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ongoing call screen"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:textColor="#000000" />
 
-    <!-- INCOMING CALL -->
-    <RelativeLayout
-        android:id="@+id/incomingSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/photosSection"
-        android:background="#F5F5F5"
-        android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ongoingTitle"
+                    android:layout_marginTop="4dp"
+                    android:text="Photo style, visuals"
+                    android:textSize="13sp"
+                    android:textColor="#777777" />
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/incomingLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Incoming call screen"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/incomingValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/incomingLabel"
-            android:layout_marginTop="4dp"
-            android:text="Photo style, answer method, visuals"
-            android:textColor="#000000"
-            android:textSize="14sp" />
-
-    </RelativeLayout>
-
-    <!-- ONGOING CALL -->
-    <RelativeLayout
-        android:id="@+id/ongoingSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/incomingSection"
-        android:background="#FFFFFF"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:id="@+id/ongoingLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ongoing call screen"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/ongoingValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ongoingLabel"
-            android:layout_marginTop="4dp"
-            android:text="Photo style, visuals"
-            android:textColor="#000000"
-            android:textSize="14sp" />
-
-    </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/dialog_recent_more"
+    android:background="@color/white"
+    android:elevation="4dp"
+    android:paddingVertical="4dp"
+    android:minWidth="160dp">
+
+    <TextView
+        android:id="@+id/tvViewCallHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WhatsApp"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/regular"
+        android:padding="14dp"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <TextView
+        android:id="@+id/tvBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WhatsApp Business"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/regular"
+        android:background="?android:attr/selectableItemBackground"/>
+
+
+</LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg"
+    android:background="@color/white_gray"
     android:fillViewport="true">
 
     <LinearLayout
@@ -11,351 +11,243 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header with Profile Info -->
+        <!-- Back Button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#FFFFFF"
-            android:padding="24dp"
-            android:elevation="2dp">
-
-            <!-- Profile Picture -->
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profileImage"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_add"
-                android:layout_gravity="center"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#E0E0E0" />
-
-            <!-- Profile Name -->
-            <TextView
-                android:id="@+id/tvProfileName"
+            android:elevation="4dp">
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mahid"
-                android:textSize="24sp"
-                android:textColor="#212121"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp" />
-
-            <!-- Email -->
-            <TextView
-                android:id="@+id/tvEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="mahid@gmail.com"
-                android:textSize="14sp"
-                android:textColor="#757575"
-                android:layout_gravity="center"
-                android:layout_marginTop="4dp" />
-
-            <!-- Edit Profile Button -->
-            <Button
-                android:id="@+id/btnEditProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Manage your Google Account"
-                android:textColor="#1a73e8"
-                android:background="@android:color/transparent"
-                android:textAllCaps="false"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:drawableStart="@android:drawable/ic_menu_manage"
-                android:drawablePadding="8dp" />
-
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/backspace_arrow"/>
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Account Section -->
+        <!-- Profile Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#FFFFFF"
-            android:elevation="2dp">
-
-            <TextView
+            android:elevation="4dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ACCOUNT"
-                android:textSize="12sp"
-                android:textColor="#757575"
-                android:textStyle="bold"
-                android:paddingStart="24dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp"
-                android:letterSpacing="0.1" />
+                android:orientation="vertical"
+                android:padding="24dp">
 
-            <!-- Switch Account -->
-            <LinearLayout
-                android:id="@+id/btnSwitchAccount"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:gravity="center_vertical"
-                android:background="?android:attr/selectableItemBackground">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_rotate"
-                    android:tint="#5f6368"
-                    android:contentDescription="Switch Account" />
-
+                <!-- Email -->
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Switch account"
-                    android:textSize="16sp"
-                    android:textColor="#212121"
-                    android:layout_marginStart="24dp" />
+                    android:text="mainld@gmail.com"
+                    android:textSize="14sp"
+                    android:textColor="#757575"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp" />
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_menu_forward"
-                    android:tint="#5f6368"
-                    android:contentDescription="Arrow" />
+                <!-- Profile Image -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/ic_profile"
+                    android:layout_gravity="center"
+                    app:civ_border_width="0dp" />
+
+                <!-- Name -->
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi, Mahid"
+                    android:textSize="20sp"
+                    android:textColor="#212121"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp" />
+
+                <!-- Manage Google Account -->
+                <TextView
+                    android:id="@+id/btnManageGoogleAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage your Google Account"
+                    android:textSize="14sp"
+                    android:textColor="#1a73e8"
+                    android:background="@android:color/transparent"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:padding="8dp"
+                    android:backgroundTint="?attr/selectableItemBackground" />
 
             </LinearLayout>
-
-            <!-- Add Account -->
-            <LinearLayout
-                android:id="@+id/btnAddAccount"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:gravity="center_vertical"
-                android:background="?android:attr/selectableItemBackground">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_add"
-                    android:tint="#5f6368"
-                    android:contentDescription="Add Account" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Add account"
-                    android:textSize="16sp"
-                    android:textColor="#212121"
-                    android:layout_marginStart="24dp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_menu_forward"
-                    android:tint="#5f6368"
-                    android:contentDescription="Arrow" />
-
-            </LinearLayout>
-
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- App Section -->
+        <!-- ACCOUNT Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#FFFFFF"
-            android:elevation="2dp">
-
-            <TextView
+            android:elevation="4dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="MORE FROM THIS APP"
-                android:textSize="12sp"
-                android:textColor="#757575"
-                android:textStyle="bold"
-                android:paddingStart="24dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp"
-                android:letterSpacing="0.1" />
+                android:orientation="vertical"
+                android:background="#FFFFFF">
 
-            <!-- Settings -->
-            <LinearLayout
-                android:id="@+id/btnSettings"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:gravity="center_vertical"
-                android:background="?android:attr/selectableItemBackground">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_preferences"
-                    android:tint="#5f6368"
-                    android:contentDescription="Settings" />
-
+                <!-- Header -->
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Settings"
-                    android:textSize="16sp"
-                    android:textColor="#212121"
-                    android:layout_marginStart="24dp" />
+                    android:text="ACCOUNT"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:textStyle="bold"
+                    android:paddingStart="24dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="12dp"
+                    android:letterSpacing="0.1" />
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_menu_forward"
-                    android:tint="#5f6368"
-                    android:contentDescription="Arrow" />
+                <!-- Switch Account -->
+                <LinearLayout
+                    android:id="@+id/btnSwitchAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:elevation="8dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:background="?android:attr/selectableItemBackground">
 
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Switch account"
+                        android:textSize="16sp"
+                        android:textColor="#212121"
+                        android:layout_marginStart="20dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_down"
+                        android:tint="#5f6368"
+                        android:contentDescription="Arrow" />
+                </LinearLayout>
             </LinearLayout>
-
-            <!-- Help & Feedback -->
-            <LinearLayout
-                android:id="@+id/btnHelp"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:gravity="center_vertical"
-                android:background="?android:attr/selectableItemBackground">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_help"
-                    android:tint="#5f6368"
-                    android:contentDescription="Help" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Help Feedback"
-                    android:textSize="16sp"
-                    android:textColor="#212121"
-                    android:layout_marginStart="24dp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_menu_forward"
-                    android:tint="#5f6368"
-                    android:contentDescription="Arrow" />
-
-            </LinearLayout>
-
-            <!-- Rate App -->
-            <LinearLayout
-                android:id="@+id/btnRateApp"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:gravity="center_vertical"
-                android:background="?android:attr/selectableItemBackground">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/btn_star"
-                    android:tint="#5f6368"
-                    android:contentDescription="Rate App" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Rate this app"
-                    android:textSize="16sp"
-                    android:textColor="#212121"
-                    android:layout_marginStart="24dp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_menu_forward"
-                    android:tint="#5f6368"
-                    android:contentDescription="Arrow" />
-
-            </LinearLayout>
-
-            <!-- Share App -->
-            <LinearLayout
-                android:id="@+id/btnShareApp"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:gravity="center_vertical"
-                android:background="?android:attr/selectableItemBackground">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_share"
-                    android:tint="#5f6368"
-                    android:contentDescription="Share App" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Share this app"
-                    android:textSize="16sp"
-                    android:textColor="#212121"
-                    android:layout_marginStart="24dp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_menu_forward"
-                    android:tint="#5f6368"
-                    android:contentDescription="Arrow" />
-
-            </LinearLayout>
-
         </LinearLayout>
 
-        <View
+        <!-- More from this app Section -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="wrap_content"
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="More from this app"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:textStyle="bold"
+                    android:paddingStart="24dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="12dp"
+                    android:letterSpacing="0.1" />
+
+                <!-- Settings -->
+                <LinearLayout
+                    android:id="@+id/btnSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:paddingEnd="24dp"
+                    android:gravity="center_vertical"
+                    android:background="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/setting_icon"
+                        android:tint="#5f6368"
+                        android:contentDescription="Settings" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Settings"
+                        android:textSize="16sp"
+                        android:textColor="#212121"
+                        android:layout_marginStart="20dp" />
+
+                </LinearLayout>
+
+                <!-- Help -->
+                <LinearLayout
+                    android:id="@+id/btnHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="24dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:paddingEnd="24dp"
+                    android:gravity="center_vertical"
+                    android:background="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/help_icon"
+                        android:tint="#5f6368"
+                        android:contentDescription="Help" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Help"
+                        android:textSize="16sp"
+                        android:textColor="#212121"
+                        android:layout_marginStart="20dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
 
         <!-- Legal Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:elevation="4dp"
+            android:orientation="horizontal"
             android:background="#FFFFFF"
-            android:elevation="2dp">
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/btnPrivacyPolicy"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
                 android:text="Privacy Policy"
-                android:textSize="14sp"
-                android:textColor="#1a73e8"
+                android:textSize="16sp"
+                android:textColor="#212121"
                 android:gravity="center_vertical|start"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
@@ -364,44 +256,17 @@
             <TextView
                 android:id="@+id/btnTerms"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="Terms of Service"
-                android:textSize="14sp"
-                android:textColor="#1a73e8"
+                android:layout_height="56dp"
+                android:text="Terms of Services"
+                android:textSize="16sp"
+                android:textColor="#212121"
                 android:gravity="center_vertical|start"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
                 android:background="?android:attr/selectableItemBackground" />
-
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
 
-        <TextView
-            android:id="@+id/tvAppVersion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="App Version 1.0.0"
-            android:textSize="12sp"
-            android:textColor="#9e9e9e"
-            android:gravity="center"
-            android:padding="16dp" />
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textColor="#d93025"
-            android:background="@android:color/transparent"
-            android:textAllCaps="false"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginBottom="32dp"
-            android:drawableStart="@android:drawable/ic_lock_power_off"
-            android:drawablePadding="8dp"
-            android:drawableTint="#d93025" />
 
     </LinearLayout>
 

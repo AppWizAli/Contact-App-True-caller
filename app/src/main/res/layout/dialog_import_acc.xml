@@ -18,7 +18,7 @@
         android:textSize="16sp"
         android:textColor="#666"
         android:textStyle="bold"
-        android:gravity="center"
+        android:gravity="start"
         android:padding="16dp"/>
 
     <!-- Google Option 1 -->
@@ -132,7 +132,7 @@
             android:id="@+id/imgPhoneIcon"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_phone_contact"
+            android:src="@drawable/phone_contct"
             android:padding="8dp"/>
 
         <!-- Text -->

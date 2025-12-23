@@ -4,108 +4,149 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg"
-    android:paddingHorizontal="16dp"
+    android:background="@color/white_gray"
     android:paddingTop="10dp">
+
+    <!-- SEARCH BAR -->
+    <RelativeLayout
+        android:id="@+id/searchlayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/search_bar"
+        android:paddingHorizontal="8dp"
+        android:layout_marginHorizontal="10dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_search"
+            android:backgroundTint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/searchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/searchIcon"
+            android:layout_marginStart="8dp"
+            android:hint="Search..."
+            android:textColorHint="#454A4E"
+            android:textSize="15sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePic"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:elevation="2dp"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/ic_profile"
+            android:background="@drawable/profile_bg"
+            android:padding="2dp" />
+    </RelativeLayout>
 
     <!-- HEADER -->
     <RelativeLayout
         android:id="@+id/headerPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="6dp">
+        android:layout_below="@id/searchlayout"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="16dp">
 
         <TextView
             android:id="@+id/txtPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone"
+            android:fontFamily="@font/regular"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold" />
+             />
 
-        <!-- 3 Dots -->
         <ImageView
             android:id="@+id/iconMore"
-            android:layout_width="26dp"
-            android:layout_height="26dp"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
             android:layout_alignParentEnd="true"
             android:src="@drawable/ic_more_vert"
+            android:layout_centerInParent="true"
             android:backgroundTint="#6E6E6E" />
 
-        <!-- Filter Icon -->
         <ImageView
             android:id="@+id/iconFilter"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_toStartOf="@id/iconMore"
             android:layout_marginEnd="12dp"
+            android:layout_centerInParent="true"
             android:src="@drawable/ic_filter"
             android:backgroundTint="#6E6E6E" />
-
     </RelativeLayout>
 
-
-    <!-- FAVORITES LABEL -->
+    <!-- FAVORITES -->
     <TextView
         android:id="@+id/txtFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Favorites"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:layout_below="@id/headerPhone"
         android:layout_marginTop="16dp"
-        android:visibility="gone" />
+        android:text="Favorites"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/medium"
+        android:textSize="16sp"
 
-    <!-- FAVORITES LIST -->
+        android:textColor="@color/black" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavorites"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginHorizontal="10dp"
         android:layout_below="@id/txtFavorites"
         android:layout_marginTop="8dp"
-        android:visibility="gone"
-        android:paddingHorizontal="4dp"
-        android:orientation="horizontal" />
+        android:paddingHorizontal="4dp" />
 
-
-    <!-- OLDER LABEL -->
+    <!-- OLDER -->
     <TextView
         android:id="@+id/txtOlder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Older"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:layout_below="@id/rvFavorites"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:text="Older"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/regular"
+        android:textColor="@color/black" />
 
-
-    <!-- RECENTS LIST -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRecents"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/txtOlder"
         android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="10dp"
         android:paddingBottom="100dp"
         android:clipToPadding="false" />
 
-
-    <!-- Floating Dial Button -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <!-- DIAL BUTTON -->
+    <ImageView
         android:id="@+id/fabDial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="30dp"
-        app:backgroundTint="#068BF4"
-        app:tint="@android:color/white"
-        app:srcCompat="@drawable/ic_dialpad" />
+        android:background="@drawable/dialer_bg"
+        android:padding="14dp"
+        android:src="@drawable/ic_dialpad"
+        />
 
 </RelativeLayout>

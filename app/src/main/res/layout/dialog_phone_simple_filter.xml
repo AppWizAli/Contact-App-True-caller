@@ -1,56 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="200dp"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
     android:elevation="4dp"
     android:paddingVertical="4dp"
     android:minWidth="160dp">
-
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Filter"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/medium"
+        android:textStyle="bold"
+        />
+
+    <!-- All calls -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="All calls"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:padding="14dp"
-        android:background="?android:attr/selectableItemBackground"/>
+        android:orientation="horizontal"
+        android:fontFamily="@font/regular"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground">
 
-    <TextView
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="All calls"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/radio_all_calls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Incoming calls -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Incoming calls"
-        android:textSize="14sp"
-        android:padding="14dp"
-        android:textColor="@color/black"
-        android:background="?android:attr/selectableItemBackground"/>
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground">
 
-    <TextView
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Incoming calls"
+            android:textSize="14sp"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/radio_incoming_calls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Outgoing calls -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Outgoing calls"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:padding="14dp"
-        android:background="?android:attr/selectableItemBackground"/>
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground">
 
-    <TextView
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Outgoing calls"
+            android:textSize="14sp"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/radio_outgoing_calls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Missed calls -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Missed calls"
-        android:textSize="14sp"
-        android:padding="14dp"
-        android:textColor="@color/black"
-        android:background="?android:attr/selectableItemBackground"/>
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground">
 
-    <TextView
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Missed calls"
+            android:textSize="14sp"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/radio_missed_calls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+    <!-- Blocked calls -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Blocked calls"
-        android:textSize="14sp"
-        android:textColor="@color/black"
-        android:padding="14dp"
-        android:background="?android:attr/selectableItemBackground"/>
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Blocked calls"
+            android:fontFamily="@font/regular"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/radio_blocked_calls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
 
 </LinearLayout>

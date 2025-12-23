@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg">
+    android:background="@color/white_gray">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,445 +13,376 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="#F5F5F5"
-            android:elevation="4dp">
+            >
 
-            <!-- Back Button -->
             <ImageView
-                android:id="@+id/backButton"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/btnBackspace"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="16dp"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:src="@drawable/backspace_arrow"
                 android:tint="#000000" />
 
-            <!-- Title -->
             <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Contacts Settings"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <!-- Apply Button -->
-            <TextView
-                android:id="@+id/applyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="16dp"
-                android:layout_alignParentEnd="true"
-                android:text="SAVE"
-                android:textColor="#000000"
-                android:textSize="14sp"
+                android:layout_centerHorizontal="true"
+                android:text="Contacts"
+                android:layout_marginStart="35dp"
                 android:textStyle="bold"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="6dp"
-                android:background="@drawable/apply_button_bg"/>
+                android:layout_alignLeft="@+id/btnBackspace"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
         </RelativeLayout>
 
-        <!-- CONTACTS TO DISPLAY -->
+        <!-- PRIMARY T9 -->
         <RelativeLayout
-            android:id="@+id/displaySection"
+            android:id="@+id/contactdisplay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/header"
             android:background="#FFFFFF"
-            android:padding="16dp"
-            android:layout_marginTop="16dp">
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/displayLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/contactLabel"
                 android:text="Contacts to display"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/displayValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/displayLabel"
-                android:layout_marginTop="8dp"
-                android:text="Showable specific accounts or groups from your contacts list"
-                android:textColor="#666666"
-                android:textSize="14sp" />
-
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactLabel"
+                android:layout_marginTop="4dp"
+                android:text="Show/Hide specific accounts or groups from your contacts list"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- VIEW CONTACT NAMES AS -->
+        <!-- SECONDARY T9 -->
         <RelativeLayout
-            android:id="@+id/viewNamesSection"
+            android:id="@+id/contactnames"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/displaySection"
+            android:layout_below="@id/contactdisplay"
             android:background="#FFFFFF"
-            android:padding="16dp"
-            android:layout_marginTop="1dp">
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/viewNamesLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/nameLabel"
                 android:text="View contact names as"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/viewNamesLabel"
-                android:layout_marginTop="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Give name first"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:checked="true" />
-
-            </RelativeLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/nameLabel"
+                android:layout_marginTop="4dp"
+                android:text="Give name first"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- SORT CONTACTS BY -->
+        <!-- DISPLAY -->
         <RelativeLayout
-            android:id="@+id/sortSection"
+            android:id="@+id/sortcontacts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/viewNamesSection"
-            android:background="#F8F8F8"
+            android:layout_below="@id/contactnames"
+            android:background="#FFFFFF"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/sortLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/sortdisplayLabel"
                 android:text="Sort Contacts by"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/sortValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/sortLabel"
-                android:layout_marginTop="8dp"
-                android:text="view name"
-                android:textColor="#666666"
-                android:textSize="14sp" />
-
+                android:layout_height="match_parent"
+                android:layout_below="@id/sortdisplayLabel"
+                android:layout_marginTop="4dp"
+                android:text="Given name"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- FORMAT PHONE NUMBERS -->
         <RelativeLayout
-            android:id="@+id/formatSection"
+            android:id="@+id/tvsmartphone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sortSection"
+            android:layout_below="@id/sortcontacts"
             android:background="#FFFFFF"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/formatLabel"
+            <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/smartphoneLabel"
                 android:text="Format phone numbers"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/formatLabel"
-                android:layout_marginTop="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Enable phone numbers formatting"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:checked="true" />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-
-        <!-- LONG CONTACT NAMES -->
-        <RelativeLayout
-            android:id="@+id/longNamesSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/formatSection"
-            android:background="#F8F8F8"
-            android:padding="16dp">
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/longNamesLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/smartphoneLabel"
+                android:layout_marginTop="4dp"
+                android:text="Enable phone numbers formating"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tvlongcontactsnames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvsmartphone"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/longcontactLabel"
                 android:text="Long contact names"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/longNamesLabel"
-                android:layout_marginTop="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Alone 2 times display names"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:checked="false" />
-
-            </RelativeLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/longcontactLabel"
+                android:layout_marginTop="4dp"
+                android:text="Allow 2-lines display names"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- ADDITIONAL CONTACT INFO -->
         <RelativeLayout
-            android:id="@+id/additionalInfoSection"
+            android:id="@+id/tvaddcontactinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/longNamesSection"
+            android:layout_below="@id/tvlongcontactsnames"
             android:background="#FFFFFF"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/additionalInfoLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Additional contact info"
-                android:textColor="#000000"
+                android:layout_height="match_parent"
+                android:id="@+id/addContactLabel"
+                android:text="Additional contacts info"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/additionalInfoValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/additionalInfoLabel"
-                android:layout_marginTop="8dp"
-                android:text="Choose additional contact info to display in contacts list, such as resume, etc."
-                android:textColor="#666666"
-                android:textSize="14sp" />
-
+                android:layout_height="match_parent"
+                android:layout_below="@id/addContactLabel"
+                android:layout_marginTop="4dp"
+                android:text="Choose additional contact info to display in contacts list, such as nickname, etc."
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- NEW CONTACT DIALOG -->
         <RelativeLayout
-            android:id="@+id/newContactSection"
+            android:id="@+id/tvcontactdialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/additionalInfoSection"
-            android:background="#F8F8F8"
+            android:layout_below="@id/tvaddcontactinfo"
+            android:background="#FFFFFF"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/newContactLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/contactDialogInfoLabel"
                 android:text="New contact dialog"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/newContactValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/newContactLabel"
-                android:layout_marginTop="8dp"
-                android:text="Select input Photos to show when creating new contact and editing contact name"
-                android:textColor="#666666"
-                android:textSize="14sp" />
-
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactDialogInfoLabel"
+                android:layout_marginTop="4dp"
+                android:text="Select input Fields to show when creating new contact and editing contact name"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- CONTACT CARD -->
         <RelativeLayout
-            android:id="@+id/contactCardSection"
+            android:id="@+id/contactcard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/newContactSection"
+            android:layout_below="@id/tvcontactdialog"
             android:background="#FFFFFF"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/contactCardLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact card"
-                android:textColor="#000000"
+                android:layout_height="match_parent"
+                android:id="@+id/contactDisplayLabel"
+                android:text="Additional contact card settings"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/contactCardValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/contactCardLabel"
-                android:layout_marginTop="8dp"
-                android:text="Additional contact card strings"
-                android:textColor="#666666"
-                android:textSize="14sp" />
-
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactDisplayLabel"
+                android:layout_marginTop="4dp"
+                android:text="Given name"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- SHOW ALPHABET -->
         <RelativeLayout
-            android:id="@+id/alphabetSection"
+            android:id="@+id/tvshowalphabets"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/contactCardSection"
-            android:background="#F8F8F8"
+            android:layout_below="@id/contactcard"
+            android:background="#FFFFFF"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/alphabetLabel"
+            <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/alphabetsLabel1"
                 android:text="Show alphabet"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/alphabetLabel"
-                android:layout_marginTop="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Enable alphabetical index"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:checked="true" />
-
-            </RelativeLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/alphabetsLabel1"
+                android:layout_marginTop="4dp"
+                android:text="Dial last known phone number by pressing call button"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- SHOW ALPHABETICALLY SEPARATORS -->
         <RelativeLayout
-            android:id="@+id/separatorsSection"
+            android:id="@+id/tvshowalphaseparator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/alphabetSection"
+            android:layout_below="@id/tvshowalphabets"
             android:background="#FFFFFF"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/separatorsLabel"
+            <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/alphabetsLabel2"
                 android:text="Show alphabetically separators"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/separatorsLabel"
-                android:layout_marginTop="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Smooth contacts by alphabet"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:checked="true" />
-
-            </RelativeLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/alphabetsLabel2"
+                android:layout_marginTop="4dp"
+                android:text="Separate contacts by alphabet"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- AUTO SHOW KEYBOARD -->
         <RelativeLayout
-            android:id="@+id/keyboardSection"
+            android:id="@+id/tvautoshowkeyboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/separatorsSection"
-            android:background="#F8F8F8"
-            android:padding="16dp"
-            android:layout_marginBottom="24dp">
+            android:layout_below="@id/tvshowalphaseparator"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/keyboardLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/alphabetsLabel3"
                 android:text="Auto show keyboard"
-                android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/keyboardLabel"
-                android:layout_marginTop="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Automatically open keyboard when switching to contacts"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:checked="true" />
-
-            </RelativeLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/alphabetsLabel3"
+                android:layout_marginTop="4dp"
+                android:text="Automatically open keyboard when switching to contacts"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
     </RelativeLayout>

@@ -3,5 +3,10 @@
     <style name="Base.Theme.TrueCallerContactApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor">@color/white_gray</item>
+        <!-- Navigation bar color optional -->
+        <item name="android:navigationBarColor">@color/white_gray</item>
+        <!-- Dark icons for light background -->
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

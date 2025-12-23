@@ -14,6 +14,8 @@
         android:text="Import/Export"
         android:textSize="15sp"
         android:padding="14dp"
+        android:fontFamily="@font/medium"
+
         android:textColor="@color/black"
         android:background="?android:attr/selectableItemBackground" />
 
@@ -24,6 +26,8 @@
         android:text="Optimize Contacts"
         android:textSize="15sp"
         android:padding="14dp"
+        android:fontFamily="@font/regular"
+
         android:textColor="@color/black"
         android:background="?android:attr/selectableItemBackground" />
 
@@ -33,6 +37,8 @@
         android:layout_height="wrap_content"
         android:text="Contacts to Display"
         android:textSize="15sp"
+        android:fontFamily="@font/regular"
+
         android:padding="14dp"
         android:textColor="@color/black"
         android:background="?android:attr/selectableItemBackground" />
@@ -43,6 +49,8 @@
         android:layout_height="wrap_content"
         android:text="Delete Contacts"
         android:textSize="15sp"
+        android:fontFamily="@font/regular"
+
         android:textColor="@color/black"
         android:padding="14dp"
         android:background="?android:attr/selectableItemBackground" />
@@ -55,6 +63,8 @@
         android:textSize="15sp"
         android:textColor="@color/black"
         android:padding="14dp"
+        android:fontFamily="@font/regular"
+
         android:background="?android:attr/selectableItemBackground" />
 
 </LinearLayout>

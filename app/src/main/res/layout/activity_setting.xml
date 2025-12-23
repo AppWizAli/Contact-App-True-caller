@@ -2,632 +2,155 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg">
+    android:background="#F4F6F8">
 
-    <!-- Header -->
+    <!-- TOP BAR -->
     <RelativeLayout
-        android:id="@+id/header"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#FFFFFF"
-        android:elevation="4dp"
-        android:paddingHorizontal="16dp">
+        android:paddingHorizontal="16dp"
+        android:background="#F4F6F8">
 
-        <!-- Back Button -->
         <ImageView
             android:id="@+id/btnBack"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_centerVertical="true"
-            android:src="@android:drawable/ic_menu_revert"
-            android:tint="#000000"
-            android:contentDescription="Back" />
+            android:src="@drawable/backspace_arrow"
+            android:layout_centerVertical="true"/>
 
-        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:text="Settings"
+            android:textSize="18sp"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/btnBack"
+            android:layout_marginStart="12dp"/>
 
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/search"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
 
-    <!-- Search Bar Background -->
-    <RelativeLayout
-        android:id="@+id/searchContainer"
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_below="@id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@id/header"
-        android:layout_margin="16dp"
-        android:background="@drawable/searchbar_background">
+        android:layout_height="match_parent">
 
-        <!-- Search Icon -->
-        <ImageView
-            android:id="@+id/searchIcon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="16dp"
-            android:src="@android:drawable/ic_menu_search"
-            android:tint="#757575" />
-
-        <!-- Search EditText -->
-        <EditText
-            android:id="@+id/searchBar"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="16dp"
-            android:background="@android:color/transparent"
-            android:hint="Search settings..."
-            android:singleLine="true"
-            android:textSize="14sp" />
+            android:orientation="vertical">
 
-    </RelativeLayout>
-
-    <!-- Settings List Container -->
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/searchContainer"
-        android:layout_marginTop="8dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            <!-- ITEM TEMPLATE -->
             <!-- Remove Ads -->
-            <RelativeLayout
-                android:id="@+id/btnRemoveAds"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvRemoveAdsTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:text="Remove Ads"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tvRemoveAdsSubtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvRemoveAdsTitle"
-                    android:layout_alignStart="@id/tvRemoveAdsTitle"
-                    android:text="Purchase to remove ads"
-                    android:textColor="#757575"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/tvRemoveAdsPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toStartOf="@+id/ivRemoveAdsArrow"
-                    android:text="$4.99"
-                    android:textColor="#4CAF50"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/ivRemoveAdsArrow"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
+            <TextView
+                style="@style/setting_title"
+                android:text="Remove Ads"/>
+            <TextView
+                style="@style/setting_sub"
+                android:text="Tap to get rid of ads"/>
+            <View style="@style/divider"/>
 
             <!-- Appearance -->
-            <RelativeLayout
+            <TextView
                 android:id="@+id/btnAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnRemoveAds"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvAppearance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Appearance"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
+                style="@style/setting_title"
+                android:text="Appearance"/>
+            <TextView style="@style/setting_sub" android:text="Themes, text size, dark theme, etc."/>
+            <View style="@style/divider"/>
 
             <!-- Behavior -->
-            <RelativeLayout
-                android:id="@+id/btnBehavior"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnAppearance"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvBehavior"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Behavior"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
+            <TextView style="@style/setting_title" android:text="Behavior"/>
+            <TextView style="@style/setting_sub" android:text="Quick actions, sound, call confirmation, missed call notifications, etc."/>
+            <View style="@style/divider"/>
 
             <!-- Dialpad -->
-            <RelativeLayout
+            <TextView
                 android:id="@+id/btnDialpad"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnBehavior"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvDialpad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Dialpad"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
+                style="@style/setting_title"
+                android:text="Dialpad"/>
+            <TextView style="@style/setting_sub" android:text="T9 settings, sound and feedback, size, appearance, etc."/>
+            <View style="@style/divider"/>
 
             <!-- Contacts -->
-            <RelativeLayout
+            <TextView
                 android:id="@+id/btnContacts"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnDialpad"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
+                style="@style/setting_title"
+                android:text="Contacts"/>
+            <TextView style="@style/setting_sub" android:text="Contacts to display, sort order, contact card, name formats, etc."/>
+            <View style="@style/divider"/>
 
-                <TextView
-                    android:id="@+id/tvContacts"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Contacts"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
+            <!-- Call history -->
+            <TextView style="@style/setting_title" android:text="Call history"/>
+            <TextView style="@style/setting_sub" android:text="Call grouping, contact names, call duration, etc."/>
+            <View style="@style/divider"/>
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-            <!-- Call History -->
-            <RelativeLayout
-                android:id="@+id/btnCallHistory"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnContacts"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvCallHistory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Call History"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-            <!-- SIM Card -->
-            <RelativeLayout
-                android:id="@+id/btnSim"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnCallHistory"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvSim"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="SIM Card"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
+            <!-- Dual SIM -->
+            <TextView style="@style/setting_title" android:text="Dual SIM"/>
+            <TextView style="@style/setting_sub" android:text="Settings for dual SIM devices"/>
+            <View style="@style/divider"/>
 
             <!-- Blacklist -->
-            <RelativeLayout
-                android:id="@+id/btnBlacklist"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnSim"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvBlacklist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Blacklist"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
+            <TextView style="@style/setting_title" android:text="Blacklist"/>
+            <TextView style="@style/setting_sub" android:text="Select contacts and phone numbers to block"/>
+            <View style="@style/divider"/>
 
             <!-- Labs -->
-            <RelativeLayout
-                android:id="@+id/btnLabs"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnBlacklist"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
+            <TextView style="@style/setting_title" android:text="Labs"/>
+            <TextView style="@style/setting_sub" android:text="Experimental features"/>
+            <View style="@style/divider"/>
 
-                <TextView
-                    android:id="@+id/tvLabs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Labs"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-            <!-- Backup/Restore -->
-            <RelativeLayout
-                android:id="@+id/btnBackupRestore"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnLabs"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvBackupRestore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Backup/Restore"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
+            <!-- Backup -->
+            <TextView style="@style/setting_title" android:text="Backup/Restore settings"/>
+            <TextView style="@style/setting_sub" android:text=""/>
+            <View style="@style/divider"/>
 
             <!-- Language -->
-            <RelativeLayout
-                android:id="@+id/btnLanguage"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnBackupRestore"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
+            <TextView style="@style/setting_title" android:text="Interface language"/>
+            <TextView style="@style/setting_sub" android:text="System"/>
+            <View style="@style/divider"/>
 
-                <TextView
-                    android:id="@+id/tvLanguage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Language"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
+            <!-- SECTION: ABOUT -->
+            <TextView style="@style/section" android:text="About"/>
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
+            <TextView style="@style/setting_title" android:text="Say Thanks"/>
+            <TextView style="@style/setting_sub" android:text="Enjoying the app? Please rate us and leave your comment on Google Play"/>
+            <View style="@style/divider"/>
 
-            </RelativeLayout>
+            <TextView style="@style/setting_title" android:text="Share App"/>
+            <TextView style="@style/setting_sub" android:text="Share Truecaller with friends"/>
+            <View style="@style/divider"/>
 
-            <!-- Say Thanks -->
-            <RelativeLayout
-                android:id="@+id/btnSayThanks"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnLanguage"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
+            <TextView style="@style/setting_title" android:text="About the App"/>
+            <TextView style="@style/setting_sub" android:text="Show more info about the app"/>
+            <View style="@style/divider"/>
 
-                <TextView
-                    android:id="@+id/tvSayThanks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Say Thanks"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
+            <!-- SECTION: ADVANCED -->
+            <TextView style="@style/section" android:text="Advanced"/>
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
+            <TextView style="@style/setting_title" android:text="License Agreement"/>
+            <TextView style="@style/setting_sub" android:text="and Privacy Policy"/>
+            <View style="@style/divider"/>
 
-            </RelativeLayout>
+            <TextView style="@style/section" android:text="Debug"/>
 
-            <!-- Share App -->
-            <RelativeLayout
-                android:id="@+id/btnShareApp"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnSayThanks"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
+            <TextView style="@style/setting_title" android:text="Report a bug"/>
+            <TextView style="@style/setting_sub" android:text="Something wrong? Help us fix it"/>
+            <View style="@style/divider"/>
 
-                <TextView
-                    android:id="@+id/tvShareApp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Share App"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
+            <TextView style="@style/setting_title" android:text="Reset settings"/>
+            <View style="@style/divider"/>
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
+            <TextView style="@style/setting_title" android:text="Restart App"/>
 
-            </RelativeLayout>
-
-            <!-- About App -->
-            <RelativeLayout
-                android:id="@+id/btnAboutApp"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnShareApp"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvAboutApp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="About App"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-            <!-- License Agreement -->
-            <RelativeLayout
-                android:id="@+id/btnLicense"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnAboutApp"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvLicense"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="License Agreement"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-            <!-- Report Bug -->
-            <RelativeLayout
-                android:id="@+id/btnReportBug"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnLicense"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvReportBug"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Report Bug"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-            <!-- Reset Settings -->
-            <RelativeLayout
-                android:id="@+id/btnResetSettings"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnReportBug"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvResetSettings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Reset Settings"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-            <!-- Restart App -->
-            <RelativeLayout
-                android:id="@+id/btnRestartApp"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_below="@id/btnResetSettings"
-                android:layout_marginTop="1dp"
-                android:background="#FFFFFF"
-                android:paddingHorizontal="16dp">
-
-                <TextView
-                    android:id="@+id/tvRestartApp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Restart App"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_menu_forward" />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-
+        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

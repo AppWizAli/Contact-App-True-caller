@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="4dp"
+    android:paddingVertical="16dp"
+    android:paddingHorizontal="24dp"
+    android:minWidth="200dp">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save to Contact"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:paddingBottom="16dp"
+        android:textColor="@color/black"/>
+
+    <!-- Phone Number -->
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="03450650761"
+        android:fontFamily="@font/regular"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:paddingVertical="8dp"/>
+
+    <!-- Create New Contact -->
+    <TextView
+        android:id="@+id/createnewcontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create New Contact"
+        android:textSize="14sp"
+        android:fontFamily="@font/regular"
+        android:textColor="@color/black"
+        android:paddingVertical="8dp"
+        android:background="?android:attr/selectableItemBackground"
+
+        android:clickable="true"/>
+
+    <!-- Save to Existing Contact -->
+    <TextView
+        android:id="@+id/savetoexistingcontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save to Existing Contact"
+        android:textSize="14sp"
+        android:fontFamily="@font/regular"
+        android:textColor="@color/black"
+        android:paddingVertical="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:clickable="true"/>
+
+</LinearLayout>

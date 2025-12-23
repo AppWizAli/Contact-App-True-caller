@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg">
+    android:background="@color/white_gray">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,42 +16,33 @@
             android:background="#F5F5F5">
 
             <ImageView
-                android:id="@+id/backButton"
+                android:id="@+id/btnBackspace"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
                 android:layout_marginStart="16dp"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:src="@drawable/backspace_arrow"
                 android:tint="#000000" />
 
             <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Dialpad"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/applyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
-                android:text="APPLY"
+                android:layout_centerHorizontal="true"
+                android:text="Dialpad"
+                android:layout_marginStart="35dp"
+                android:textStyle="bold"
+                android:layout_alignLeft="@+id/btnBackspace"
+                android:textSize="18sp"
                 android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/regular" />
+
 
         </RelativeLayout>
 
-        <!-- PRIMARY T9 LANGUAGE -->
+        <!-- PRIMARY T9 -->
         <RelativeLayout
-            android:id="@+id/primaryT9Section"
+            android:id="@+id/primaryT9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/header"
@@ -59,305 +50,311 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/primaryT9Label"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:id="@+id/primaryLabel"
                 android:text="Primary T9 language"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/primaryT9Value"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/primaryT9Label"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_below="@id/primaryLabel"
                 android:layout_marginTop="4dp"
                 android:text="Default"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- SECONDARY T9 LANGUAGE -->
+        <!-- SECONDARY T9 -->
         <RelativeLayout
-            android:id="@+id/secondaryT9Section"
+            android:id="@+id/secondaryT9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/primaryT9Section"
-            android:background="#F5F5F5"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/secondaryT9Label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:text="Secondary T9 language"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/secondaryT9Value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/secondaryT9Label"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="4dp"
-                android:text="Default"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
-        </RelativeLayout>
-
-        <!-- DISPLAY BY DEFAULT -->
-        <RelativeLayout
-            android:id="@+id/displaySection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/secondaryT9Section"
+            android:layout_below="@id/primaryT9"
             android:background="#FFFFFF"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/displayLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:text="Display by Default"
+                android:layout_height="match_parent"
+                android:id="@+id/secondaryLabel"
+                android:text="Secondary T9 language"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/displayValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/secondaryLabel"
+                android:layout_marginTop="4dp"
+                android:text="Default"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
+        </RelativeLayout>
+
+        <!-- DISPLAY -->
+        <RelativeLayout
+            android:id="@+id/display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/secondaryT9"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/displayLabel"
+                android:text="Display by Default"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@id/displayLabel"
-                android:layout_alignParentStart="true"
                 android:layout_marginTop="4dp"
                 android:text="Average"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
-
-        <!-- DIALLPAD -->
         <RelativeLayout
-            android:id="@+id/dialpadSection"
+            android:id="@+id/dialpad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/displaySection"
-            android:background="#F5F5F5"
+            android:layout_below="@id/display"
+            android:background="#FFFFFF"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/dialpadLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:id="@+id/dial"
                 android:text="Dialpad"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/dialpadValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/dialpadLabel"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_below="@id/dial"
                 android:layout_marginTop="4dp"
-                android:text="Dialpad sent T9 text size, call button"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:text="Dialpad and T9 text size, call button"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- HIDE BY BACK-PRESS -->
+        <!-- HIDE BY BACK PRESS (CHECKBOX) -->
         <RelativeLayout
-            android:id="@+id/hideSection"
+            android:id="@+id/hideByBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/dialpadSection"
+            android:layout_below="@id/dialpad"
             android:background="#FFFFFF"
             android:padding="16dp">
 
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/hideLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:text="Hide by back-press"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/hideValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@id/hideLabel"
-                android:layout_alignParentStart="true"
                 android:layout_marginTop="4dp"
-                android:text="Hide dipped by back-press"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:text="Hide dialpad by back-press"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- CLEAR BY BACK-PRESS -->
+        <!-- CLEAR BY BACK PRESS -->
         <RelativeLayout
-            android:id="@+id/clearSection"
+            android:id="@+id/clearByBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/hideSection"
-            android:background="#F5F5F5"
+            android:layout_below="@id/hideByBack"
+            android:background="#FFFFFF"
             android:padding="16dp">
 
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/clearLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
                 android:text="Clear by back-press"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/clearValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@id/clearLabel"
-                android:layout_alignParentStart="true"
                 android:layout_marginTop="4dp"
-                android:text="Hide phone numbers by back-press"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:text="Clear number by back-press"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
-
-        <!-- CLEAR WHEN OPEN -->
         <RelativeLayout
-            android:id="@+id/clearOpenSection"
+            android:id="@+id/clearByOpen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/clearSection"
+            android:layout_below="@id/clearByBack"
             android:background="#FFFFFF"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/clearOpenLabel"
+            <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/clearopenLabel"
                 android:text="Clear when open"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/clearOpenValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/clearOpenLabel"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_below="@id/clearopenLabel"
                 android:layout_marginTop="4dp"
-                android:text="Clear typical private number when dialer is open"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:text="Clear typed phone number when dailer is open"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
-        <!-- FAST-DIAL LAST NUMBER -->
+        <!-- FAST DIAL LAST -->
         <RelativeLayout
-            android:id="@+id/fastDialSection"
+            android:id="@+id/fastDialLast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/clearOpenSection"
-            android:background="#F5F5F5"
+            android:layout_below="@id/clearByOpen"
+            android:background="#FFFFFF"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/fastDialLabel"
+            <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/fastLabel"
                 android:text="Fast-dial last number"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/fastDialValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/fastDialLabel"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_below="@id/fastLabel"
                 android:layout_marginTop="4dp"
-                android:text="Dial last-known replace number by pressing call button"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:text="Dial last number on call button press"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
-
-        <!-- FAST-DIAL WHEN SEARCH -->
         <RelativeLayout
-            android:id="@+id/fastDialSearchSection"
+            android:id="@+id/fastDialsearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fastDialSection"
+            android:layout_below="@id/fastDialLast"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/fastsearchLabel"
+                android:text="Fast-dial when search"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/regular" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/fastsearchLabel"
+                android:layout_marginTop="4dp"
+                android:text="Dial last known phone number by pressing call button"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btnAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fastDialsearch"
             android:background="#FFFFFF"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/fastDialSearchLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:text="Fast-dial when search"
+                android:layout_height="match_parent"
+                android:id="@+id/ActionLabel"
+                android:text="Action Button"
+                android:textSize="16sp"
                 android:textColor="#000000"
-                android:textSize="16sp" />
+                android:fontFamily="@font/regular" />
 
             <TextView
-                android:id="@+id/fastDialSearchValue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/fastDialSearchLabel"
-                android:layout_alignParentStart="true"
+                android:layout_height="match_parent"
+                android:layout_below="@id/ActionLabel"
                 android:layout_marginTop="4dp"
-                android:text="Dial the best result found when search by pressing call button"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
-        </RelativeLayout>
-
-        <!-- ACTION BUTTON -->
-        <RelativeLayout
-            android:id="@+id/actionButtonSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fastDialSearchSection"
-            android:background="#F5F5F5"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp">
-
-            <TextView
-                android:id="@+id/actionButtonLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:text="Action button"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/actionButtonValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/actionButtonLabel"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="4dp"
-                android:text="Add contact"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
+                android:text="Add Contact"
+                android:textSize="13sp"
+                android:textColor="#777777"
+                android:fontFamily="@font/regular" />
         </RelativeLayout>
 
     </RelativeLayout>

@@ -1,129 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/screen_bg"
-    tools:context=".ActivityDeleteContact">
+    android:background="@color/white_gray">
 
-    <!-- Top Header with Back, Title and Search -->
+    <!-- ================= TOP BAR ================= -->
     <RelativeLayout
-        android:id="@+id/headerLayout"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="12dp"
-        android:paddingBottom="16dp"
-        android:background="#FFFFFF">
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:paddingHorizontal="16dp">
 
-        <!-- Back Arrow -->
         <ImageView
-            android:id="@+id/arrowback"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/arrow_back"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:contentDescription="Back"
-            android:backgroundTint="#000000" />
+            android:id="@+id/backArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backspace_arrow"/>
 
-        <!-- Delete Contacts Title -->
         <TextView
-            android:id="@+id/deleteContacts"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete Contacts"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_toEndOf="@+id/arrowback"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp" />
+            android:textSize="18sp"
+            android:fontFamily="@font/medium"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/backArrow"
+            android:layout_marginStart="30dp"
+            />
 
-        <!-- Search Bar -->
-        <com.google.android.material.search.SearchBar
-            android:id="@+id/searchBar"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="4dp"
-            android:backgroundTint="@color/white"
-            android:hint="Search"
-            app:iconTint="#000000"
-            style="@style/Widget.Material3.SearchBar"
-            app:strokeColor="#E0E0E0"
-            app:strokeWidth="1dp" />
-
+            android:layout_centerVertical="true"
+            android:src="@drawable/search"/>
     </RelativeLayout>
 
-    <!-- All | Recents Tabs -->
-    <LinearLayout
-        android:id="@+id/tabLayout"
+    <!-- ================= CONTENT ================= -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/headerLayout"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:background="#F5F5F5">
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:paddingBottom="24dp">
 
-        <!-- All Tab (Selected) -->
-        <TextView
-            android:id="@+id/tab_all"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="All"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingBottom="8dp"
-            android:paddingEnd="24dp"
-            android:textColor="#007AFF"
-            android:drawablePadding="4dp"
-            android:drawableBottom="@drawable/underline_selected" />
+            android:padding="20dp">
 
-        <!-- Recents Tab (Unselected) -->
-        <TextView
-            android:id="@+id/tab_recents"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="24dp"
-            android:paddingBottom="8dp"
-            android:text="Recents"
-            android:textColor="#8E8E93"
-            android:textSize="16sp" />
+            <!-- DELETE BUTTON -->
+            <TextView
+                android:id="@+id/removeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete (3)"
+                android:textSize="16sp"
+                android:textColor="#003596"
+                android:layout_alignParentEnd="true"
+                android:padding="8dp"
+                android:background="?attr/selectableItemBackground"/>
 
-    </LinearLayout>
+            <!-- ALL + CHECKBOX -->
+            <RelativeLayout
+                android:id="@+id/allRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/removeButton"
+                >
 
-    <!-- Contacts List -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tabLayout"
-        android:layout_above="@+id/btnDelete"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingTop="8dp" />
+                <TextView
+                    android:id="@+id/tvAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All"
+                    android:textSize="18sp"
+                    android:textColor="#454A4E"
+                    android:layout_alignParentStart="true"/>
 
-    <!-- Delete Button (Fixed at Bottom) -->
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete (0)"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@color/white"
-        android:enabled="false"
-        android:padding="16dp"
-        android:layout_margin="16dp"
-        android:layout_alignParentBottom="true"
-        android:stateListAnimator="@null"
-        android:elevation="0dp" />
+                <CheckBox
+                    android:id="@+id/cbAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+            <!-- RECENT ROW -->
+            <RelativeLayout
+                android:id="@+id/recentRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/allRow"
+               >
+
+                <TextView
+                    android:id="@+id/tvRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recent"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/regular"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"/>
+
+                <CheckBox
+                    android:id="@+id/cbRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+            <!-- RECENT CONTACTS -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRecent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recentRow"
+                android:layout_marginTop="12dp"/>
+
+            <!-- ALL CONTACTS TITLE -->
+            <TextView
+                android:id="@+id/allContactTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Contacts"
+                android:textSize="16sp"
+                android:layout_below="@id/recyclerRecent"
+                android:layout_marginTop="16dp"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerRecent"
+                android:layout_alignParentEnd="true"
+                />
+
+            <!-- ALL CONTACTS LIST -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/allContactTitle"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

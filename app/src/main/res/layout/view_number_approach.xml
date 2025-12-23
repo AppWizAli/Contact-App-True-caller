@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_recent_more"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="4dp"
+    android:minWidth="200dp"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="12dp">
+
+    <!-- Phone Number -->
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="03450650761"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:padding="14dp"
+        android:background="?android:attr/selectableItemBackground"
+        />
+
+    <!-- View Call History -->
+    <TextView
+        android:id="@+id/tvViewCallHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Call history"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"
+        />
+
+    <!-- Call with SIMs + More -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingVertical="8dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/tvShare"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Call"
+            android:textSize="14sp"
+            android:paddingStart="16dp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/jazzsim"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/jazz_sim"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageView
+            android:id="@+id/telenorsim"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/telenor_sim2"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageView
+            android:id="@+id/moreIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_more_vert"/>
+    </LinearLayout>
+
+    <!-- Send Text Message -->
+    <TextView
+        android:id="@+id/tvsendtextmsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send text message"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <!-- Edit Number -->
+    <TextView
+        android:id="@+id/tveditnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit number before calling"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <!-- Copy Number -->
+    <TextView
+        android:id="@+id/tvCopyNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copy Number"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <!-- Search Web -->
+    <TextView
+        android:id="@+id/tvsearchWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search the web"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <!-- Appointment -->
+    <TextView
+        android:id="@+id/tvcreatappointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Appointment"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <!-- Share -->
+    <TextView
+        android:id="@+id/tvSharecontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <!-- Block -->
+    <TextView
+        android:id="@+id/tvBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Block"
+        android:textSize="14sp"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+</LinearLayout>

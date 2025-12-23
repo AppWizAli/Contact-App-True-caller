@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrueCallerContactApp">
         <activity
+            android:name=".ActivityContactsDispaly"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRemoveFavCalls"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityFavouriteCalls"
+            android:exported="false" />
+        <activity
             android:name=".ActivityContactSet"
             android:exported="false" />
         <activity

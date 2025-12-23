@@ -3,8 +3,10 @@ package com.atul.truecallercontactapp
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.atul.truecallercontactapp.databinding.ActivityCoworkersBinding
 
 class ActivityCoworkers : AppCompatActivity() {
@@ -13,6 +15,9 @@ class ActivityCoworkers : AppCompatActivity() {
         super.onCreate(savedInstanceState)
        binding = ActivityCoworkersBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.statusBarColor = ContextCompat.getColor(this@ActivityCoworkers, R.color.white_gray)
 
+        // Light status bar (dark icons)
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
     }
 }

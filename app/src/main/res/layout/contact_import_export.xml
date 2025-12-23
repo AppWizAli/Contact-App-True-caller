@@ -25,6 +25,7 @@
         android:text="Import from SIM"
         android:textSize="15sp"
         android:padding="14dp"
+        android:fontFamily="@font/regular"
         android:textColor="@color/black"
         android:background="?android:attr/selectableItemBackground" />
 
@@ -36,6 +37,7 @@
         android:textSize="15sp"
         android:textColor="@color/black"
         android:padding="14dp"
+        android:fontFamily="@font/regular"
         android:background="?android:attr/selectableItemBackground" />
 
     <TextView
@@ -45,6 +47,8 @@
         android:text="Export to Storage"
         android:textSize="15sp"
         android:textColor="@color/black"
+        android:fontFamily="@font/regular"
+
         android:padding="14dp"
         android:background="?android:attr/selectableItemBackground" />
 
@@ -54,6 +58,8 @@
         android:layout_height="wrap_content"
         android:text="Share Visible Contacts"
         android:textSize="15sp"
+        android:fontFamily="@font/regular"
+
         android:textColor="@color/black"
         android:padding="14dp"
         android:background="?android:attr/selectableItemBackground" />
@@ -66,6 +72,8 @@
         android:textSize="15sp"
         android:textColor="@color/black"
         android:padding="14dp"
+        android:fontFamily="@font/regular"
+
         android:background="?android:attr/selectableItemBackground" />
 
     <!-- Cancel Button -->
@@ -76,8 +84,9 @@
         android:text="Cancel"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:textAlignment="center"
+        android:textAlignment="textEnd"
         android:textColor="#D10000"
+        android:layout_marginEnd="20dp"
         android:padding="14dp"
         android:background="?android:attr/selectableItemBackground" />
 
