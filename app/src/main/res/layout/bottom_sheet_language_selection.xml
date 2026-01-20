@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_rounded_surface">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Secondary T9 language"
+        android:textColor="@color/text_primary_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_languages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:checked="true"
+            android:layoutDirection="rtl"
+            android:textAlignment="viewStart" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_urdu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Urdu"
+            android:layoutDirection="rtl"
+            android:textAlignment="viewStart" />
+        
+        <!-- Duplicate items to match image style -->
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Urdu"
+            android:layoutDirection="rtl"
+            android:textAlignment="viewStart" />
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Urdu"
+            android:layoutDirection="rtl"
+            android:textAlignment="viewStart" />
+
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancel"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Cancel"
+        android:textColor="@color/missed_call_red"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_rounded_surface">
+
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_history" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_call" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_message" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_edit" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_copy" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_search" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_appointment" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_share" />
+    <include layout="@layout/item_sheet_option" android:id="@+id/opt_block" />
+
+</LinearLayout>

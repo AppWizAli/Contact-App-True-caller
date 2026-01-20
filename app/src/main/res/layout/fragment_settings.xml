@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_light_bg">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_more_vert_24"
+        android:rotation="180"
+        app:tint="@color/text_primary_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Settings"
+        android:textColor="@color/text_primary_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintStart_toEndOf="@id/iv_back"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_search_24"
+        app:tint="@color/text_primary_light"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_setting_row" android:id="@+id/set_ads" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_appearance" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_behavior" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_dialpad" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_contacts" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_history" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_sim" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_blacklist" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_labs" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_backup" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_language" />
+
+            <TextView style="@style/SettingHeaderStyle" android:text="About" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_thanks" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_share" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_about_app" />
+
+            <TextView style="@style/SettingHeaderStyle" android:text="Advanced" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_license" />
+
+            <TextView style="@style/SettingHeaderStyle" android:text="Debug" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_bug" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_reset" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_restart" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

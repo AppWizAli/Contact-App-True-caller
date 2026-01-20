@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_rounded_surface">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose filters"
+        android:textColor="@color/text_primary_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_all"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="All calls"
+            android:button="@null"
+            android:paddingHorizontal="4dp"
+            android:drawableEnd="?android:attr/listChoiceIndicatorSingle"
+            android:checked="true" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_incoming"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Incoming calls"
+            android:button="@null"
+            android:paddingHorizontal="4dp"
+            android:drawableEnd="?android:attr/listChoiceIndicatorSingle" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_outgoing"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Outgoing calls"
+            android:button="@null"
+            android:paddingHorizontal="4dp"
+            android:drawableEnd="?android:attr/listChoiceIndicatorSingle" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_missed"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Missed calls"
+            android:button="@null"
+            android:paddingHorizontal="4dp"
+            android:drawableEnd="?android:attr/listChoiceIndicatorSingle" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_blocked"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Blocked calls"
+            android:button="@null"
+            android:paddingHorizontal="4dp"
+            android:drawableEnd="?android:attr/listChoiceIndicatorSingle" />
+
+    </RadioGroup>
+
+</LinearLayout>

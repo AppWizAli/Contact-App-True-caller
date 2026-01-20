@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "True caller Contact app"
+rootProject.name = "Dailer"
 include(":app")
+ 

@@ -2,30 +2,41 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="whitee">#F5F5F5</color>
-    <color name="Green">#4CAF50</color>
-    <color name="white_gray">#F0F3F8</color>
-    <color name="primary_color">#2196F3</color>
-    <color name="primary_dark">#1976D2</color>
-    <color name="accent_color">#FF4081</color>
-    <color name="background_light">#f8fafc</color>
-    <color name="card_background">#FFFFFF</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
-    <color name="divider">#E0E0E0</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="teal">#10D0C0</color>
-    <color name="purple_500">#6200EE</color>
-    <color name="orange_500">#FA9D14</color>
-    <color name="green_500">#388E3C</color>
+    
+    <!-- Theme Backgrounds -->
+    <color name="theme_light_bg">#FFF5F7FA</color>
+    <color name="theme_dark_bg">#FF121212</color>
 
-    <!-- Status bar colors -->
-    <color name="status_bar_dark">#1E1B24</color>  <!-- Dark blue status bar -->
-    <color name="status_bar_light">#F5F5F5</color> <!-- Light status bar -->
+    <!-- Brand Colors -->
+    <color name="primary_blue">#FF5B8CFF</color>
+    <color name="primary_blue_dark">#FF4A75DB</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary_light">#FF111827</color>
+    <color name="text_secondary_light">#FF6B7280</color>
+    <color name="text_primary_dark">#FFE8EAED</color>
+    <color name="text_secondary_dark">#FF9AA0A6</color>
 
-    <color name="nav_selected">#1E88E5</color> <!-- Nice blue -->
-    <color name="nav_unselected">#6E6E6E</color> <!-- Gray -->
+    <!-- Action Colors -->
+    <color name="call_green">#FF22C55E</color>
+    <color name="end_red">#FFF44336</color>
+    <color name="missed_call_red">#FFEF4444</color>
+    
+    <!-- Surface/Pill Colors -->
+    <color name="surface_white">#FFFFFFFF</color>
+    <color name="pill_bg_light">#265B8CFF</color> <!-- 15% opacity blue -->
+    <color name="pill_bg_dark">#335B8CFF</color>
+    <color name="nav_icon_inactive">#FF9E9E9E</color>
+    
+    <!-- Divider -->
+    <color name="divider_grey">#FFE5E7EB</color>
+    
+    <!-- Keypad -->
+    <color name="keypad_bg_light">#FFFFFFFF</color>
+    <color name="keypad_bg_dark">#FF1E1E1E</color>
+    <color name="keypad_text_light">#FF111827</color>
+    <color name="keypad_text_dark">#FFE8EAED</color>
 
+    <!-- Search Bar -->
+    <color name="search_bar_bg">#FFF2F4F7</color>
 </resources>

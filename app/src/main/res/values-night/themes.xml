@@ -1,12 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.TrueCallerContactApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="android:statusBarColor">@color/white_gray</item>
-        <!-- Navigation bar color optional -->
-        <item name="android:navigationBarColor">@color/white_gray</item>
-        <!-- Dark icons for light background -->
-        <item name="android:windowLightStatusBar">true</item>
+    <style name="Theme.Dialer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/primary_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">?android:attr/windowBackground</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/theme_dark_bg</item>
+    </style>
+    
+     <style name="KeypadButtonStyle" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:backgroundTint">@color/keypad_bg_dark</item>
+        <item name="android:textColor">@color/keypad_text_dark</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
     </style>
 </resources>

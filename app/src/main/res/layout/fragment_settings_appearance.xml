@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_light_bg">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_more_vert_24"
+        android:rotation="180"
+        app:tint="@color/text_primary_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Appearance"
+        android:textColor="@color/text_primary_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintStart_toEndOf="@id/iv_back"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_setting_row" android:id="@+id/set_theme" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_tabs" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_text_size" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_dialpad_style" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_list_size" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_fav_layout" />
+
+            <TextView style="@style/SettingHeaderStyle" android:text="Photos and Avatar" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_custom_photo" />
+
+            <TextView style="@style/SettingHeaderStyle" android:text="Incoming call screen" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_incoming_style" />
+
+            <TextView style="@style/SettingHeaderStyle" android:text="Ongoing call screen" />
+            <include layout="@layout/item_setting_row" android:id="@+id/set_ongoing_style" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
