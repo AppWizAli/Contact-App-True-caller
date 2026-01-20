@@ -16,6 +16,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="teal">#10D0C0</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="orange_500">#FA9D14</color>
+    <color name="green_500">#388E3C</color>
 
     <!-- Status bar colors -->
     <color name="status_bar_dark">#1E1B24</color>  <!-- Dark blue status bar -->
