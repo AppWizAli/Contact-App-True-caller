@@ -132,7 +132,7 @@ class DialerFragment : Fragment() {
             showOptionsMenu(it)
         }
         
-        binding.tvSeeAll.setOnClickListener {
+        binding.tvAll.setOnClickListener {
             findNavController().navigate(R.id.nav_contacts)
         }
     }

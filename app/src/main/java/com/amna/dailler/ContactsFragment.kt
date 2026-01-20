@@ -82,7 +82,7 @@ class ContactsFragment : Fragment() {
             findNavController().navigate(R.id.nav_create_contact)
         }
         
-        binding.ivMore.setOnClickListener {
+        binding.ivAvatar.setOnClickListener {
             showOptionsMenu(it)
         }
     }

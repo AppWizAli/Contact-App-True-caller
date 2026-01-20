@@ -58,13 +58,11 @@
                         app:layout_constraintStart_toEndOf="@id/iv_search"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_avatar"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_contacts_24"
-                        android:background="@drawable/bg_pill_active"
-                        android:padding="4dp"
+                        android:src="@drawable/ic_launcher_background"
                         android:layout_marginEnd="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/iv_more"
@@ -73,6 +71,7 @@
                     <ImageView
                         android:id="@+id/iv_more"
                         android:layout_width="24dp"
+                        android:visibility="gone"
                         android:layout_height="24dp"
                         android:src="@drawable/ic_more_vert_24"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,14 +83,40 @@
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Favorites Section -->
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Favorites"
-                android:textColor="@color/text_primary_light"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp" />
+                >
+                <ImageView
+                    android:id="@+id/ivstar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/star"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favorites"
+                    android:layout_marginLeft="4dp"
+                    android:paddingVertical="2dp"
+                    android:layout_toRightOf="@+id/ivstar"
+                    android:textColor="@color/text_primary_light"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"
+                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See All"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#003596"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+            </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_favorites"
