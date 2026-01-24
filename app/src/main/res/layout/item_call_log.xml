@@ -1,103 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="65dp"
-    app:cardCornerRadius="12dp"
-    android:layout_marginHorizontal="2dp"
-    android:layout_marginTop="3dp"
-
->
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    >
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_avatar"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:src="@drawable/ic_contacts_24"
-        android:padding="8dp"
-        android:background="@color/search_bar_bg"
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="@android:color/white">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Contact Name"
-        android:textColor="@color/text_primary_light"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/tv_time"
-        app:layout_constraintStart_toEndOf="@id/iv_avatar"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="12dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/iv_info"
-        app:layout_constraintStart_toStartOf="@id/tv_name"
-        app:layout_constraintTop_toBottomOf="@id/tv_name">
+        <!-- Profile Image (Hidden by default) -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Initial Circle -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_initial"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#A8D5BA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_initial"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="E"
+                android:textColor="#2E5C3E"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Contact Name / Phone Number -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="0346 7455800 (2)"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toStartOf="@id/tv_time"
+            app:layout_constraintStart_toEndOf="@id/card_initial"
+            app:layout_constraintTop_toTopOf="@id/card_initial" />
+
+        <!-- Call Info Layout (Icon + Location) -->
+        <LinearLayout
+            android:id="@+id/layout_call_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/iv_info"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintBottom_toBottomOf="@id/card_initial">
+
+            <!-- Call Type Icon -->
+            <ImageView
+                android:id="@+id/iv_call_type"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/star"
+                app:tint="#4CAF50" />
+
+            <!-- Location/Country Icon -->
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/star"
+                app:tint="#757575" />
+
+            <!-- Location Text -->
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pakistan"
+                android:textColor="#757575"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="39 hrs ago"
+            android:textColor="#757575"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/iv_info"
+            app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+        <!-- Info Icon -->
         <ImageView
-            android:id="@+id/iv_call_type"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginEnd="4dp"
-            android:src="@drawable/ic_phone_24"
-            app:tint="@color/primary_blue" />
+            android:id="@+id/iv_info"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/info"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="2dp"
+            app:tint="#757575"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0345 7455800"
-            android:textColor="@color/text_secondary_light"
-            android:textSize="13sp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" • Pakistan"
-            android:textColor="@color/text_secondary_light"
-            android:textSize="13sp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="15 m ago"
-        android:textColor="@color/text_secondary_light"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@id/iv_info"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/iv_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

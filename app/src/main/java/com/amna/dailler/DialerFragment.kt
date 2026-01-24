@@ -128,11 +128,11 @@ class DialerFragment : Fragment() {
             showFilterSheet()
         }
 
-        binding.ivMore.setOnClickListener {
-            showOptionsMenu(it)
+        binding.ivAvatar.setOnClickListener {
+            findNavController().navigate(R.id.nav_settings)
         }
         
-        binding.tvAll.setOnClickListener {
+        binding.tvSeeAll.setOnClickListener {
             findNavController().navigate(R.id.nav_contacts)
         }
     }

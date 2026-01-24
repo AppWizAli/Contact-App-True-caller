@@ -24,7 +24,7 @@ class CallLogAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val entry = getItem(position)
         holder.binding.tvName.text = entry.name ?: entry.number
-        holder.binding.tvNumber.text = entry.number
+     //   holder.binding.tvNumber.text = entry.number
         holder.binding.tvTime.text = entry.time
         
         val context = holder.binding.root.context

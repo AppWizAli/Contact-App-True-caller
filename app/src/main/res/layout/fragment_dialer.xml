@@ -4,29 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/theme_light_bg">
+    android:background="#F5F5F5">
 
-    <!-- Search Bar Section (Fixed) -->
+    <!-- Search Bar Section -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_search"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/search_bar_bg"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@android:color/white"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="12dp">
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp">
 
             <ImageView
                 android:id="@+id/iv_search"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_search_24"
+                app:tint="#757575"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,11 +41,11 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="12dp"
                 android:background="@null"
-                android:hint="Search contacts"
+                android:hint="Search"
                 android:imeOptions="actionSearch"
-                android:inputType="textPersonName"
-                android:textColor="@color/text_primary_light"
-                android:textColorHint="@color/text_secondary_light"
+                android:inputType="text"
+                android:textColor="#212121"
+                android:textColorHint="#9E9E9E"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/iv_avatar"
@@ -50,20 +54,9 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_avatar"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_launcher_background"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/iv_more"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_more"
-                android:layout_width="24dp"
-                android:visibility="gone"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_more_vert_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -72,115 +65,153 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Content Sections (Fixed Header + Scrollable List) -->
+    <!-- Phone Header with Filter Icon -->
     <LinearLayout
-        android:id="@+id/layout_headers"
+        android:id="@+id/layout_phone_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="16dp"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical"
         app:layout_constraintTop_toBottomOf="@id/card_search">
 
-        <!-- Favorites Section -->
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            >
-            <ImageView
-                android:id="@+id/ivstar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:src="@drawable/star"
-                android:layout_alignParentStart="true"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Favorites"
-                android:layout_marginLeft="4dp"
-                android:paddingVertical="2dp"
-                android:layout_toRightOf="@+id/ivstar"
-                android:textColor="@color/text_primary_light"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp"
-                />
-            <TextView
-                android:id="@+id/tv_All"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="See All"
-                android:layout_alignParentEnd="true"
-                android:textColor="#003596"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp" />
+            android:layout_weight="1"
+            android:text="Phone"
+            android:textColor="#212121"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        </RelativeLayout>
+        <ImageView
+            android:id="@+id/iv_filter"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/star"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#757575" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_favorites"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_favorite_card"
-            android:layout_marginBottom="16dp" />
+        <ImageView
+            android:id="@+id/iv_more_options"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_more_vert_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#757575" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/search_bar_bg"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Call Logs Header -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Recent"
-                android:textColor="@color/text_secondary_light"
-                android:textSize="12sp" />
-
-            <ImageView
-                android:id="@+id/iv_filter"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:padding="4dp"
-                android:src="@drawable/ic_more_vert_24"
-                android:background="?attr/selectableItemBackgroundBorderless" />
-        </LinearLayout>
     </LinearLayout>
 
+    <!-- Favorites Section Header -->
+    <LinearLayout
+        android:id="@+id/layout_favorites_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/layout_phone_header">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/star"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="Favorites"
+            android:textColor="#212121"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See all"
+            android:textColor="#1976D2"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="?attr/selectableItemBackground"
+            android:padding="4dp" />
+
+    </LinearLayout>
+
+    <!-- Favorites RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_favorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="12dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/layout_favorites_header"
+        tools:listitem="@layout/item_favorite_card" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#E0E0E0"
+        app:layout_constraintTop_toBottomOf="@id/rv_favorites" />
+
+    <!-- Older/Recent Header -->
+    <TextView
+        android:id="@+id/tv_older_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="Older"
+        android:textColor="#757575"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <!-- Call Logs RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_call_logs"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingHorizontal="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_headers"
+        app:layout_constraintTop_toBottomOf="@id/tv_older_header"
         tools:listitem="@layout/item_call_log" />
 
+    <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_dialpad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
+        android:contentDescription="Open dialpad"
         app:srcCompat="@drawable/ic_dialpad_24"
-        app:backgroundTint="@color/primary_blue"
-        app:tint="@color/white"
+        app:backgroundTint="#1976D2"
+        app:tint="@android:color/white"
         app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Open dialpad" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
